@@ -1,0 +1,25 @@
+{
+    "version": "4.5.1",
+    "locale": "es_ES",
+    "theme": "zaveapp",
+    "plugins": [
+        {
+            "name": "wordpress-seo",
+            "active": true,
+            "version": "stable"
+        }
+    ],
+    "wordpress-workflow" : [
+        {
+            "dependencies-mannager": {
+            "software": "",
+            "version" : ""
+            },
+            "style-preprocessor": {
+
+            }
+        }
+    ] 
+
+}
+

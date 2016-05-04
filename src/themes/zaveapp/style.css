@@ -1,0 +1,896 @@
+/*CSS document */
+/*
+Theme Name: zaveapp
+Theme URI: http://wordpress.org/themes/zaveapp
+Author: Anna Atiagina
+Author URI: http://atiagina.com/
+Description: The theme created for ZaveApp in May 2016 to represent the brand and its unique features.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: zaveapp
+*/
+
+/* for debugging:
+
+* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}
+
+*/
+
+/* RESETS */
+body {
+	margin: 0 auto;
+    width: 100%;
+	padding: 0;
+	box-sizing: border-box;	/* declared width = rendered width */
+    overflow-x: hidden;
+}
+
+body * {
+    box-sizing: border-box;	/* declared width = rendered width */
+}
+
+a img {
+	border: 0;
+}
+
+a {
+    color: black; !important
+}
+
+#section1,
+#section4 {
+    padding:0; !important
+}
+
+
+/* END RESETS */
+
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/*end of wordpress genereated classes */
+
+html {
+	font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
+}
+
+body {
+	font-size: 100%;   
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.5; 
+}
+
+.container-fluid {
+    padding: 0px; !important
+}
+
+
+
+/*FONTS AND TEXT STYLES */
+
+
+
+
+h1 {
+    font-family: Comfortaa; !important
+font-size: 5em;
+color: white;
+}
+
+.container-fluid.full-width>h2,
+#onpintext {
+    font-family: OswaldDemiBold; !important
+    font-size: 2em;
+    text-transform: uppercase; 
+    margin: 25px; 
+}
+
+h2 {
+    font-family: OswaldDemiBold; !important
+    font-size: 2em; !important
+    text-transform: uppercase; 
+    margin: 25px; !important
+}
+
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    line-height: 2em;
+}
+
+h4 {
+    font-family: OswaldDemiBold;
+    text-transform: uppercase;
+    line-height: 1.8em;
+}
+
+/*MAIN STYLES */
+
+.myrow {
+    padding: 0 5%;
+}
+
+.myrow>div {
+    padding: 20px;
+}
+
+.multilogo {
+    margin: 20px;
+    display: inline-block;
+}
+
+
+/*NAVIGATION*/
+
+
+.navbar {
+    min-height: 80px;
+    background-color: white;
+    opacity: 0.8;
+    font-family: OswaldDemiBold;
+}
+
+#navcont {
+    padding-left: 0;
+    /*margin-left: 20px; 
+    margin-right: 0px;*/
+}
+
+
+a.navbar-brand {
+    
+    padding: 0 30px; !important
+}
+
+#nav-toggle-button span {
+    color: black;
+}
+
+#picnic2 {
+display: block;
+height: 580px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+#section1 {
+    margin-top: 80px;
+}
+
+ul.nav.navbar-nav {
+    
+   margin-top: 40px; 
+   margin-right: 0;
+}
+
+ul.nav.navbar-nav li {
+    padding: 5px 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+ul.nav.navbar-nav>li:hover,
+ul.nav.navbar-nav>li:focus
+{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+/*section1 */
+
+.invisible {
+    display: none;
+}
+
+.relativesection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.project-overlay-2 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: 100%;
+}
+
+.project-overlay-3 {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    height: 100%;
+}
+
+
+.project-overlay-4 {
+    position: absolute;
+    top: 80%;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.videocol {
+    text-align: center;
+    opacity: .7;
+}
+
+.videocol > a:nth-child(1) {
+    color: #000;
+}
+
+#videobutton {
+    margin: 0 auto;
+    font-size: 8.5em;
+    text-shadow: 5px 5px 5px #000;
+}
+
+
+
+#Div2 {
+  display: none;
+}
+
+
+
+#clickvideo {
+    background-color: white;
+    opacity: .9;
+    font-weight: 800;
+    font-size: 1em;
+    padding: 5px 5px;
+    max-width:240px;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 5px 5px 5px #000;
+}
+
+h1.ahorra {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-family: Comfortaa; !important
+    font-size: 5em; !important
+}
+
+.project-overlay > div > div > .storebtn {
+    background: black;
+    max-width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.5em;
+    overflow: hidden;
+}
+
+.project-overlay>div>div>a>i{
+    font-size: 2.8em;
+}
+
+.myicon {
+    font-size: 2em;
+    
+}
+
+#Div2 {
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
+}
+
+#Div2 i {
+    font-size: 2.5em;
+}
+
+.customfull {
+    padding: 0px; !important
+}
+
+.modal-content iframe{
+        margin: 0 auto;
+        display: block;
+    }
+    .modal-header {
+        background-color: black;
+        color: white;
+        opacity: 0.1;
+    }
+        
+        #button-video {
+            margin-left: 15px;
+        }
+        
+#videoModal {
+           position: fixed;
+            top: 20%;
+        }
+    
+.modal-content {
+            
+        
+            background-image:url(img/picnic1920_2.jpg);
+        }
+    
+/* Section 2 - social */
+
+#section2 p {
+    font-size: 1.4em;
+}
+
+.socialbutton {
+    
+    background: black;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.socialbutton a,
+.socialbutton a:hover,
+.socialbutton a:focus,
+.socialbutton a:active {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Section 3 - COMO FUNCIONA */
+
+.steps
+{
+    text-align: center;
+    padding: 30px;
+}
+
+#section3 > div.row.myrow > div > p > i {
+    font-size: 5em;
+}
+
+
+
+
+/*SECTION 4 - ASI DE SIMPLE */
+
+#pintext {
+    position: absolute;
+    float: right;
+    top: 10%;
+    right: 0;
+    max-width: 300px;
+    padding-right: 0;
+    margin-right:0;
+    text-align: right;
+}
+
+#onpintext {
+    color: white;
+    background: black;
+    padding: 10px;
+    margin-right: 0;
+    margin-bottom:0;
+}
+
+
+#onpintext2 {
+    color: black;
+    background: white;
+    opacity: .7;
+    padding: 10px;
+}
+
+
+
+/*SECTION 6 - SEGURIDAD */
+
+ #section6 {
+     background-color: black;
+     color: white;
+     padding-bottom: 30px;
+ }
+
+
+
+/*SECTION 7 - METAS */
+
+.nav-pills>li>a {
+    font-family: OswaldDemiBold;
+    font-size: 1.5em;
+    color: black; !important
+    
+}
+
+.nav-pills>li {
+    border: 1px solid black; 
+    border-radius: 20px; !important
+}
+
+
+
+.nav-pills>li:focus,
+.nav-pills>li:hover {
+    border: none;
+}
+
+.nav-pills>li>a:focus, 
+.nav-pills>li>a:hover {
+    color: white;
+    background-color: black; !important
+    border: 1px solid transparent; 
+    
+    border-radius: 20px; 
+}
+
+
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:focus, 
+.nav-pills>li.active>a:hover {
+    color: white;
+    background-color: black; 
+    border-radius: 20px; 
+}
+
+.nav-pills>li.active {
+border: none;
+}
+
+.tab-pane.fade.in.active {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px; !important
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+#ulmetas {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#ulmetas li {
+    margin-right: 10px;
+}
+
+#compra,
+#viaja {
+    border: 1px solid black;
+    
+}
+
+.metaslogos {
+    color: white;
+    background-color: black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+}
+
+.metaslogos ul>li {
+    display: inline;
+    list-style: none;
+    width: 100%;
+    margin: 10px 20px;
+}
+
+.imetas {
+    font-size: 6em;
+}
+
+/*SECTION 10 - ZAVEAPP TEAM */
+
+#section10 {
+    background-color: black;
+    color: white;
+}
+
+
+/*SECTION 12 - PRENSA */
+
+#section12 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+
+/* MEDIA QUERIES */
+
+/* max-width: 800px */
+
+@media screen and (max-width: 1350px){
+    #picnic2 {
+        height: 550px;
+    }
+}
+
+@media screen and (max-width: 1290px){
+    #picnic2 {
+        height: 530px;
+    }
+}
+
+@media screen and (max-width: 1220px){
+    #picnic2 {
+        height: 520px;
+    }
+}
+
+@media screen and (max-width: 1210px){
+    
+    h1 {
+        font-size: 4em;
+    }
+    
+    #picnic2 {
+        height: 500px;
+    }
+    
+    
+
+.project-overlay-2 {
+    top: 30%;
+    
+}
+
+
+    .project-overlay-3 {
+    top: 60%;
+    }
+
+
+.project-overlay-4 {
+    top: 80%; 
+    }
+    
+    .storebtn {
+    background: black;
+    max-width: 200px;
+    height: 80px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1em;
+    overflow: hidden;
+}
+}
+
+
+@media screen and (max-width: 1170px){
+    #picnic2 {
+        height: 490px;
+    }
+}
+
+@media screen and (max-width: 1145px){
+    #picnic2 {
+        height: 470px;
+    }
+    
+}
+
+
+@media screen and (max-width: 1080px){
+   
+    
+    #picnic2 {
+        height: 440px;
+    }
+}
+
+@media screen and (max-width: 1025px){
+   
+    
+    #picnic2 {
+        height: 420px;
+    }
+    
+    .socialbutton {
+    
+    font-size: .8em;
+}
+    
+    .project-overlay-3 {
+    top: 70%;
+    }
+    
+}
+
+@media screen and (max-width: 980px){
+   
+    
+    #picnic2 {
+        height: 410px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    h1 {
+       font-size: 3em; 
+    }
+    
+    #picnic2 {
+        height: 380px;
+    }
+    
+    .project-overlay-4 {
+    top: 75%; 
+    }
+    
+    .navbar-default {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px){
+   
+    
+    #picnic2 {
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 865px){
+   
+    
+    .socialbutton {
+    
+    font-size: .7em;
+}
+}
+
+@media screen and (max-width: 830px){
+   
+    
+    #picnic2 {
+        height: 340px;
+    }
+}
+
+@media screen and (max-width: 770px){
+   
+    
+    #picnic2 {
+        height: 300px;
+    }
+    
+    .socialbutton {
+      margin-right: 30px;
+    margin-left: 30px;
+    }
+    
+    #videobutton {
+    font-size: 6em;
+}
+    
+    #Div2 iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 680px){
+   
+    
+    #picnic2 {
+        height: 280px;
+    }
+    
+    .ahorra {
+        font-size: 2.5em;
+    }
+    
+    #videobutton {
+    font-size:5em;
+}
+    
+    #clickvideo {
+        font-size: .8em;
+    }
+    
+    .ahorra {
+        font-size: 2em;
+        color: black;
+    }
+    
+    .project-overlay {
+    display: none;
+    }
+    
+    .project-overlay-3 {
+    top: 70%;
+    }
+    
+    .project-overlay-4 {
+    display: none;
+    }
+    
+    .relativesection {
+      margin-bottom: 10px;  
+    }
+    
+    /* .storebtns {
+        margin-bottom: 10px;
+    }
+    
+    */
+    
+   
+    
+    .storebtn {
+    max-width: 250px;
+    height: 60px;
+    font-size: .8em;
+    margin: 10px auto;
+        display: inline-block;
+        
+}
+    
+    .invisible {
+        visibility: visible;
+        display: block;
+        text-align: center;
+    }
+    
+    #Div2{
+        left: 25%;
+        bottom: 0;
+    }
+    
+    #Div2 iframe {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 650px){
+   
+    
+    #picnic2 {
+        height: 280px;
+    }
+    
+}
+
+@media screen and (max-width: 640px){
+   
+    
+    #picnic2 {
+        height: 260px;
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+   
+    
+    #picnic2 {
+        height: 240px;
+    }
+    
+}
+
+@media screen and (max-width: 550px){
+   
+    #picnic2 {
+        height: 220px;
+    }
+   
+}
+
+@media screen and (max-width: 500px){
+   
+    #picnic2 {
+        height: 200px;
+    }
+    
+    #navcont > div.navbar-header {
+        width: 100%;
+    }
+   
+}
+
+
+@media screen and (max-width: 450px){
+   
+    #picnic2 {
+        height: 180px;
+    }
+    
+   .project-overlay-3 {
+    top: 80%;
+    } 
+    
+    .ahorra {
+        font-size: 1.5em;
+        color: black;
+    }
+   
+}
+
+@media screen and (max-width: 320px){
+    .navbar.navbar-fixed-top {
+        min-height: 60px;
+        margin-top: 0;
+    }
+    
+    #logo {
+        height: 60px;
+    }
+    
+   #navcont > div.navbar-header > a {
+        padding: 10px;
+       margin: 0 auto;
+    }
+    
+    .ahorra {
+        font-size: 1.2em;
+    }
+    
+    #picnic2 {
+        height: 160px;
+    }
+    
+    #Div2{
+        left: 10%;
+        bottom: 0;
+    }
+    
+}
+
+
