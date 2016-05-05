@@ -7,6 +7,11 @@
             "name": "wordpress-seo",
             "active": true,
             "version": "stable"
+        },
+        {
+            "name": "contact-form-7",
+            "active": true,
+            "version": "stable"
         }
     ],
     "wordpress-workflow" : [

@@ -1,8 +1,138 @@
 <div class="container-fluid full-width" id="section14" >
-            <div class="row row-content">
-                <div class="col-xs-12">
-                    <p>Section to put Footer</p>
+            <div class="row row-fluid">
+                <div class="col-xs-12 col-sm-3">
+                    <img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="footerlogo" alt="Zave App logo" height=40>
                 </div>
+                <div class="col-xs-12 col-sm-2">
+            <?php 
+		$query = new WP_Query( 'pagename=aviso-de-privacidad' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div class="centerbutton" type="button" data-toggle="modal" data-target="#privasidadModal">';
+                echo get_the_title();
+                echo '</div>';
+                echo '<div id="privasidadModal" class="modal fade">';
+                echo '<div class="modal-dialog">';
+                echo '<div class="modal-content">';
+
+                echo '<div class="modal-header">';
+                echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+				echo '<h4 class="modal-title">' . get_the_title() . '</h4>';
+                echo '</div>';
+                echo '<div class="modal-body">';
+                the_content();
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+     
+                        </div>
+                    
+        <div class="col-xs-12 col-sm-2">
+<?php 
+		$query = new WP_Query( 'pagename=terminos-y-condiciones' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div type="button" class="centerbutton" data-toggle="modal" data-target="#terminosModal">';
+                echo get_the_title();
+                echo '</div>';
+                echo '<div id="terminosModal" class="modal fade">';
+                echo '<div class="modal-dialog">';
+                echo '<div class="modal-content">';
+
+                echo '<div class="modal-header">';
+                echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+				echo '<h4 class="modal-title">' . get_the_title() . '</h4>';
+                echo '</div>';
+                echo '<div class="modal-body">';
+                the_content();
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+            <?php 
+		$query = new WP_Query( 'pagename=faq' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div type="button" class="centerbutton" data-toggle="modal" data-target="#faqModal">';
+                echo get_the_title();
+                echo '</div>';
+                echo '<div id="faqModal" class="modal fade">';
+                echo '<div class="modal-dialog">';
+                echo '<div class="modal-content">';
+
+                echo '<div class="modal-header">';
+                echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+				echo '<h4 class="modal-title">' . get_the_title() . '</h4>';
+                echo '</div>';
+                echo '<div class="modal-body">';
+                the_content();
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+     
+                        </div>
+                
+                <div class="col-xs-12 col-sm-2">
+            <?php 
+		$query = new WP_Query( 'pagename=careers' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div type="button" class="centerbutton" data-toggle="modal" data-target="#careersModal">';
+                echo get_the_title();
+                echo '</div>';
+                echo '<div id="careersModal" class="modal fade">';
+                echo '<div class="modal-dialog">';
+                echo '<div class="modal-content">';
+
+                echo '<div class="modal-header">';
+                echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+				echo '<h4 class="modal-title">' . get_the_title() . '</h4>';
+                echo '</div>';
+                echo '<div class="modal-body">';
+                the_content();
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+     
+                        </div>
+                
             </div>
         </div>
         

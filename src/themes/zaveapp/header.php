@@ -42,13 +42,9 @@
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
     <!-- Begin switch video -->
     
-    <script>
-        jQuery(function() {
-        jQuery(img).addClass('img-responsive');
-        });
-    </script>
+
     
-         <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
         /* Get iframe src attribute value i.e. YouTube video url
         and store it in a variable */
@@ -67,7 +63,7 @@
         });
     });
 
-    </script>
+</script>
 
     
     
@@ -81,7 +77,7 @@
     smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
     startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
     slideshow: true,                //Boolean: Animate slider automatically
-    slideshowSpeed: 7000,});
+    slideshowSpeed: 4000,});
     });
     </script>
     <!-- End Flex Slider -->
@@ -97,7 +93,7 @@
 <!-- End wp head -->
 </head>
     
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -111,7 +107,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-        <a class="navbar-brand" href="index.html"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="logo" alt="Zave App logo" height=80></a>
+        <a class="navbar-brand" href="<?php $url = home_url();
+echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="logo" alt="Zave App logo" height=80></a>
                     
     </div> <!-- END OF NAVBAR-HEADER -->
                 

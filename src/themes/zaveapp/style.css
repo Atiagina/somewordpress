@@ -27,7 +27,7 @@ body {
     width: 100%;
 	padding: 0;
 	box-sizing: border-box;	/* declared width = rendered width */
-    overflow-x: hidden;
+    overflow-x: hidden; !important
 }
 
 body * {
@@ -38,12 +38,11 @@ a img {
 	border: 0;
 }
 
-a {
-    color: black; !important
-}
+
 
 #section1,
-#section4 {
+#section4,
+#section5 {
     padding:0; !important
 }
 
@@ -148,11 +147,32 @@ h4 {
     padding: 20px;
 }
 
-.multilogo {
-    margin: 20px;
-    display: inline-block;
+
+.multilogo img {
+    margin: 20px; !important
+    /* display: inline-block; !important */
+    float: left; !important
+    
 }
 
+
+.custombutton {
+    color: black;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    font-family: OswaldDemiBold;
+}
+
+.custombutton a,
+.custombutton a:hover,
+.custombutton a:focus {
+    color: black;
+    text-decoration: none;
+}
 
 /*NAVIGATION*/
 
@@ -178,6 +198,10 @@ a.navbar-brand {
 
 #nav-toggle-button span {
     color: black;
+}
+
+a.btn.btn-app-download.storebtn {
+    color: white; !important
 }
 
 #picnic2 {
@@ -273,7 +297,10 @@ ul.nav.navbar-nav>li:focus
     text-shadow: 5px 5px 5px #000;
 }
 
-
+.project-overlay-3 a{
+    color: black; !important
+    font-weight: 800;
+}
 
 #Div2 {
   display: none;
@@ -294,7 +321,14 @@ ul.nav.navbar-nav>li:focus
     box-shadow: 5px 5px 5px #000;
 }
 
-h1.ahorra {
+#clickvideo a.btn.
+#clickvideo a.btn:hover,
+#clickvideo a.btn:focus {
+    color: black; !important
+    text-decoration: none;!important
+}
+
+#section1 .project-overlay-4 h1.ahorra {
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -340,11 +374,25 @@ h1.ahorra {
         margin: 0 auto;
         display: block;
     }
-    .modal-header {
+.modal-header {
         background-color: black;
         color: white;
-        opacity: 0.1;
-    }
+        font-family: OswaldDemiBold; !important
+}
+
+.modal-header button.close {
+    color: white; !important
+    opacity: .8; !important
+}
+
+.modal-header .close {
+    opacity: .8; !important
+}
+
+
+.modal-content {
+    color: black; !important
+}
         
         #button-video {
             margin-left: 15px;
@@ -355,11 +403,6 @@ h1.ahorra {
             top: 20%;
         }
     
-.modal-content {
-            
-        
-            background-image:url(img/picnic1920_2.jpg);
-        }
     
 /* Section 2 - social */
 
@@ -396,7 +439,7 @@ h1.ahorra {
     padding: 30px;
 }
 
-#section3 > div.row.myrow > div > p > i {
+#section3 > div.row.myrow > div > i {
     font-size: 5em;
 }
 
@@ -432,6 +475,10 @@ h1.ahorra {
     padding: 10px;
 }
 
+/*#section4 .relativesection {
+    margin-bottom: 0;
+}
+*/
 
 
 /*SECTION 6 - SEGURIDAD */
@@ -531,11 +578,26 @@ border: none;
     font-size: 6em;
 }
 
+/*SECTION 8 - TESTIMONIALS */
+
+#section8 h4 {
+    font-family: OswaldDemiBold; !important
+    text-transform: uppercase;
+    line-height: 1.8em;
+}
+
+
 /*SECTION 10 - ZAVEAPP TEAM */
 
 #section10 {
     background-color: black;
     color: white;
+}
+
+#section10 h4 {
+    font-family: OswaldDemiBold; !important
+    text-transform: uppercase;
+    line-height: 1.8em;
 }
 
 
@@ -545,6 +607,60 @@ border: none;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     
+}
+
+/* SECTION 13 - CONTACT */
+
+.wpcf7-form-control.wpcf7-submit {
+    padding: 5px 10px;
+    color: black;
+    font-family: OswaldDemiBold;
+    font-size: 1.5em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.wpcf7-form-control-wrap.your-message textarea {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.wpcf7-form input,
+.wpcf7-form select {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#section13 .socialbutton {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 1.4em;
+}
+
+
+/* SECTION 14 - FOOTER */
+
+#section14 {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+#section14 div .centerbutton {
+    text-align: center;
+}
+
+#section14 .modal-content.modal-body {
+    background-color: white;
+    color: black;
+}
+
+#footerlogo {
+    margin-top: -10px;
 }
 
 /* MEDIA QUERIES */

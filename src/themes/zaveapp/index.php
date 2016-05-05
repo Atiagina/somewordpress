@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <!-- SECTION 1 - INTRODUCTION -->  
@@ -44,7 +43,8 @@
         wp_reset_postdata();
 		?>
                 
-                <div id="videoModal" class="modal fade">
+ <!-- Start Video Modal -->              
+        <div id="videoModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -52,30 +52,95 @@
                             <div class="modal-body">
                                 <button type="button" id="button-video" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                 <div class="embed-responsive embed-responsive-16by9">
-                                
-                                <iframe id="zaveVideo" class="embed-responsive-item"  src="https://www.youtube.com/embed/Ik3t3H9M1Rc" frameborder="0" allowfullscreen></iframe> 
+                                <?php 
+		$query = new WP_Query( 'pagename=youtube-video' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<iframe id="zaveVideo" class="embed-responsive-item"  src="';
+                if (get_post_meta($post->ID, 'youtube', true));
+                    
+                echo get_post_meta($post->ID, 'youtube', true);
+                echo '" frameborder="0" allowfullscreen></iframe>';
+				
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
                             </div>
                             </div>
                         </div>
                     </div>
     </div>
+                
+<!-- End Video Modal -->   
                        
                 <div class="project-overlay">
                     <div class="row"> 
                     
-                    <div class="col-xs-6"><a href="http://apple.co/1M4yQRi" class="btn btn-app-download storebtn" target="_blank">
-                        <i class="fa fa-apple myicon"></i>
-                        <strong>Bajar App<br>desde App Store</strong>
-                    </a></div>
-                    <div class="col-xs-6"><a href="http://bit.ly/1f1hF5U" class="btn btn-app-download storebtn" target="_blank">
-                        <i class="fa fa-android myicon"></i>
-                        <strong>Bajar App<br> 
-                       desde Play Store</strong>
-                    </a>
-                    </div>
-                    </div>
-                </div> <!-- end of project-overlay -->  
-                <div class="project-overlay-2">
+                    <div class="col-xs-6"><?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'appstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'appstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-apple myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'appstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'appstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+        </div>
+        <div class="col-xs-6">
+                        <?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'playstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'playstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-android myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'playstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'playstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                        
+        </div>
+    </div>
+</div> <!-- end of project-overlay -->  
+                
+<div class="project-overlay-2">
                     <div class="row">
                             <div class="col-xs-12 videocol">
                                <a href="#videoModal" class="btn" data-toggle="modal"><i class="fa fa-play-circle" id="videobutton" aria-hidden="true"></i></a>
@@ -86,14 +151,56 @@
                 <div class="project-overlay-3">  
                 
                     <div class="row">
-                        <div class="col-xs-12"><p id="clickvideo"><a href="#videoModal" class="btn " data-toggle="modal">Click to see 60 secs video</a></p></div>
+                        <div class="col-xs-12"><p id="clickvideo">
+                            <?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="#videoModal" class="btn " data-toggle="modal">';
+                if (get_post_meta($post->ID, 'clickvideofrase', true));
+                    
+                echo get_post_meta($post->ID, 'clickvideofrase', true);
+                echo '</a>';
+				
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                            
+                            </p></div>
                     </div>
                 </div> <!-- end of project-overlay-3 --> 
                         
                 <div class="project-overlay-4">  
                     
                     <div class="row">
-                        <div class="col-xs-12"><h1 class="ahorra">Ahorra y viaja con Zave App!</h1></div>
+                        <div class="col-xs-12">
+                            <?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<h1 class="ahorra">';
+                if (get_post_meta($post->ID, 'frase', true));
+                    
+                echo get_post_meta($post->ID, 'frase', true);
+                echo '</h1>';
+				
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                            
+                        </div>
                 
                     </div>
             </div> <!-- end of project-overlay-4 -->
@@ -228,13 +335,20 @@
             <div class="row">
                 <div class="col-xs-12">
                    <!-- Begin Flex Slider -->
-<div class="flexslider">
-<ul class="slides">
-<li><img src="img/slider1.png" alt="slider picture"/><blockquote>First Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</blockquote></li>
-<li><img src="img/slider2.png" alt="slider picture"/><blockquote>Second Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</blockquote></li>
-<li><img src="img/slider3.png" alt="slider picture"/><blockquote>Third Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</blockquote></li>
-</ul>
-</div>
+<?php 
+		$query = new WP_Query( 'pagename=slider' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                add_flexslider(); 
+            }
+        }
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                
 <!-- End Flex Slider -->
                 </div>
             </div> <!-- end of row --> 
@@ -254,14 +368,14 @@
 				echo '<div class="col-xs-12 col-sm-6">';
 				the_content();
 				echo '</div>';
-                echo '<div class="col-xs-12 col-sm-6 metaslogos">';
+                echo '<div class="col-xs-12 col-sm-6 metaslogos multilogo">';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
-    'class' => "attachment-$size wp-post-image",
+    'class' => "wp-post-image img-responsive",
 );
 foreach( $gallery as $image ) {
-     echo wp_get_attachment_image($image->ID, $attachment_id, 'img-responsive multilogo');
+     echo wp_get_attachment_image($image->ID, $attachment_id, $attr);
 }
                 echo '</div>';
                 echo '</div>';
@@ -277,49 +391,131 @@ foreach( $gallery as $image ) {
         
 <!-- SECTION 7 - METAS --> 
 <div class="container-fluid full-width" id="section7" >
-            <h2>Metas</h2>
+     <?php 
+		$query = new WP_Query( 'pagename=metas' );
+        $metas_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+                echo '<div class="row myrow">';
+                echo '<div class="col-xs-12 col-sm-6">';
+                the_content();
+                echo '</div>';
+                echo '<div class="col-xs-12 col-sm-6"></div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ ?>
             
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                Short History of application and team. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-                </div>
-                <div class="col-xs-12 col-sm-6"></div>
-            </div> <!-- end of row --> 
-            
-    
     <div class="row myrow">
                 <div class="col-xs-12">
                     
                     
                     <ul class="nav nav-pills nav-justified" id="ulmetas">
-                      <li class="active"><a data-toggle="pill" href="#viaja" >Viaja</a></li>
-                      <li><a data-toggle="pill" href="#compra">Compra</a></li>
-                      <li><a data-toggle="pill" href="#redeem">Redima</a></li>
-                      <li><a data-toggle="pill" href="#dona">Dona</a></li>
+                        <?php 
+		$query = new WP_Query( 'pagename=viajar' );
+        $metas_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<li class="active"><a data-toggle="pill" href="#viaja" >';
+                echo get_the_title();
+                echo '</a></li>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ ?>
+        <?php 
+		$query = new WP_Query( 'pagename=comprar' );
+        $metas_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<li><a data-toggle="pill" href="#compra" >' . get_the_title() . '</a></li>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ ?>
+                        
+        <?php 
+		$query = new WP_Query( 'pagename=ahorrar' );
+        $metas_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<li><a data-toggle="pill" href="#redeem" >' . get_the_title() . '</a></li>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ ?>
+        <?php 
+		$query = new WP_Query( 'pagename=donar' );
+        $metas_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<li><a data-toggle="pill" href="#dona" >' . get_the_title() . '</a></li>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ ?>
+        
                     </ul>
                     
                     <div class="tab-content">
                 <div id="viaja" class="tab-pane fade in active" style="background-image:url(img/viajeros.jpg);">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <h3>Viaja</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
+                    <?php 
+		$query = new WP_Query( 'pagename=viajar' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div class="col-xs-12 col-sm-6">';
+				echo '<h3>' . get_the_title() . '</h3>';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
+                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                
+$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$attr = array(
+    'class' => "attachment-$size wp-post-image",
+);
+foreach( $gallery as $image ) {
+     echo wp_get_attachment_image($image->ID, $attachment_id);
+}
+                echo '</div>';
+                echo '</div>';
+			}
+		}
 
-Curabitur eget consequat sapien, nec dapibus tellus. mollis, sit amet ullamcorper ipsum molestie.</p>
-
-
-                </div> <!-- end of col -->
-                <div class="col-xs-12 col-sm-3 col-sm-offset-3">
-                    <div class="col-xs-12 metaslogos"> 
-                <ul>
-                <li><img src="img/expedialogo.png" alt="expedia"></li>
-                <li><img src="img/expedialogo.png" alt="expedia"></li>
-                <li><img src="img/expedialogo.png" alt="expedia"></li>
-                </ul>
-        </div> <!-- end of metaslogos -->
-                    </div>
-        
-       
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+            
     </div> <!-- end of row -->
                      
                     
@@ -327,33 +523,104 @@ Curabitur eget consequat sapien, nec dapibus tellus. mollis, sit amet ullamcorpe
                         
     <div id="compra" class="tab-pane fade">
       <div class="row">
-        <div class="col-xs-12 col-sm-2">
-            <i class="fa fa-money imetas" aria-hidden="true"></i>
-          </div> <!-- end of col --> 
-        <div class="col-xs-12 col-sm-6">
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
+        <?php 
+		$query = new WP_Query( 'pagename=comprar' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div class="col-xs-12 col-sm-6">';
+				echo '<h3>' . get_the_title() . '</h3>';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
+                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                
+$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$attr = array(
+    'class' => "attachment-$size wp-post-image",
+);
+foreach( $gallery as $image ) {
+     echo wp_get_attachment_image($image->ID, $attachment_id);
+}
+                echo '</div>';
+                echo '</div>';
+			}
+		}
 
-Curabitur eget consequat sapien, nec dapibus tellus. mollis, sit amet ullamcorper ipsum molestie.</p>
-        </div> <!-- end of col --> 
-          <div class="metaslogos"> 
-        <ul>
-        <li><img src="img/expedialogo.png" alt="expedia"></li>
-        <li><img src="img/expedialogo.png" alt="expedia"></li>
-        <li><img src="img/expedialogo.png" alt="expedia"></li>
-        </ul>
-        </div> <!-- end of metalogos --> 
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
         </div> <!-- end of row --> 
     </div> <!-- end of compra -->
     <div id="redeem" class="tab-pane fade">
-      <h3>Redeem</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <div class="row">
+        <?php 
+		$query = new WP_Query( 'pagename=ahorrar' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div class="col-xs-12 col-sm-6">';
+				echo '<h3>' . get_the_title() . '</h3>';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
+                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                
+$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$attr = array(
+    'class' => "attachment-$size wp-post-image",
+);
+foreach( $gallery as $image ) {
+     echo wp_get_attachment_image($image->ID, $attachment_id);
+}
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+        
+        </div>
+      
     </div> <!-- end of redeem -->
                         
     <div id="dona" class="tab-pane fade">
-      <h3>Dona</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div> <!-- end of dona -->
+        <div class="row">
+            <?php 
+		$query = new WP_Query( 'pagename=donar' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                echo '<div class="col-xs-12 col-sm-6">';
+				echo '<h3>' . get_the_title() . '</h3>';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
+                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                
+$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$attr = array(
+    'class' => "attachment-$size wp-post-image",
+);
+foreach( $gallery as $image ) {
+     echo wp_get_attachment_image($image->ID, $attachment_id);
+}
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+        
+        </div>
+                        </div> <!-- end of donar -->
                         
   </div> <!-- end of tab-content -->
                 </div> <!-- end of col -->
@@ -362,164 +629,259 @@ Curabitur eget consequat sapien, nec dapibus tellus. mollis, sit amet ullamcorpe
         </div>
 <!-- END OF SECTION 7 - METAS --> 
         
-        <div class="container-fluid full-width" id="section8" >
-            <h2>Testimonials</h2>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    <h4>Nombre de usuario</h4>
-                    </div>
-                </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    <h4>Nombre de usuario</h4>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid full-width" id="section8" >
+    <?php 
+		$query = new WP_Query( 'pagename=testimonials' );
+        $testimonials_id = $query->queried_object->ID;
         
-        <div class="container-fluid full-width" id="section9" >
-            <h2>Nosotros</h2>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                    <p>Short History of application and team. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</p>
-                    <p>Short History of application and team. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</p>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <p>Section to put Nosotros - history</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container-fluid full-width" id="section10" >
-            <h2>Zave App Team</h2>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <h4>Nombre, ocupacion</h4>
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                            <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    </div>
-                </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <h4>Nombre, ocupacion</h4>
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                            <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <h4>Nombre, ocupacion</h4>
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                            <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    </div>
-                </div>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div class="row">
-                        <div class="col-xs-4">
-                    <img src="img/person1.jpg" class="img-responsive img-circle" alt="testimonial" />
-                            </div>
-                        <div class="col-xs-8">
-                    <h4>Nombre, ocupacion</h4>
-                    <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                            <p>Lorem ipsum dolor sit amet, con
-sectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.
-</p>
-                    
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container-fluid full-width" id="section11" >
-            <h2>Partners</h2>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</p>
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+			}
+		}
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget consequat sapien, nec dapibus tellus. Proin porttitor tellus vitae enim mollis, sit amet ullamcorper ipsum molestie.</p>
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <img src="img/wayra.jpg" class="img-responsive multilogo" alt="wayra" />
-                    <img src="img/igc.jpg" class="img-responsive multilogo" alt="igc" />
-                </div>
-            </div>
-        </div>
+		/* Restore original Post Data */
+		wp_reset_postdata();
+ /*get the childern of the como funciona page */
         
-        <div class="container-fluid full-width" id="section12" >
-            <h2>Prensa</h2>
-            <div class="row myrow">
-                <div class="col-xs-12 col-sm-9">
-                     <img src="img/forbes.png" class="img-responsive multilogo" alt="forbes" />
-                    <img src="img/proceso.png" class="img-responsive multilogo" alt="proceso" />
-                    <img src="img/wayra.jpg" class="img-responsive multilogo" alt="wayra" />
-                    <img src="img/igc.jpg" class="img-responsive multilogo" alt="igc" />
-                    <img src="img/forbes.png" class="img-responsive multilogo" alt="forbes" />
-                    <img src="img/proceso.png" class="img-responsive multilogo" alt="proceso" />
-                </div>
-                <div class="col-xs-12 col-sm-3">
-                    <button> Download Press Kit</button>
-                </div>
-            </div>
-        </div>
+        $args = array('posts_per_page' => 2,
+                    'orderby' => 'rand',
+                    'category_name' => 'testimonials');
+        $testimonials_query = new WP_query( $args );
+
+        //the loop
+      
+
+        if($testimonials_query->have_posts()) {
+            
+             echo '<div class="row myrow">';
+            while ($testimonials_query->have_posts()){
+                $testimonials_query->the_post();
+               $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="row">';
+                echo '<div class="col-xs-4">';
+                echo '<img src="';
+                echo $url;
+                echo '" class="img-responsive img-circle" alt="testimonial" />';
+				echo '</div>';
+                echo '<div class="col-xs-8">';
+                the_content();
+                echo '<h4>' . get_the_title() . '</h4>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+            echo '</div>';
+        }
+    /* Restore original Post Data */
+		wp_reset_postdata();
+            ?>
+            
+</div>
+
+<!-- END OF SECTION 8 - TESTIMONIALS --> 
         
-        <div class="container-fluid full-width" id="section13" >
-            <h2>Contacto</h2>
-            <div class="row myrow">
-                <div class="col-xs-12">
-                    <p>Section to put contacts</p>
-                </div>
-            </div>
+<!-- SECTION 9 - NOSOTROS --> 
+        <div class="container-fluid full-width" id="section9" >
+            <?php 
+		$query = new WP_Query( 'pagename=nosotros' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+                echo '<div class="row myrow">';
+				
+                echo '<div class="col-xs-12 col-sm-6 multilogo">';
+                the_content();
+                echo '</div>';
+                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="custombutton">';
+                if (get_post_meta($post->ID, 'custombutton', true));
+                    
+                echo get_post_meta($post->ID, 'custombutton', true);
+                echo '</div>';
+				echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+        </div>
+<!-- END OF SECTION 9 - NOSOTROS --> 
+
+<!-- SECTION 10 - ZAVE APP TEAM --> 
+        
+<div class="container-fluid full-width" id="section10" >
+             <?php 
+		$query = new WP_Query( 'pagename=zave-app-team' );
+        $zaveappteam_id = $query->queried_object->ID;
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+/*get the childern of the como funciona page */
+        
+        $args = array('post_type' => 'page',
+                'post_parent' => $zaveappteam_id,
+                'order'   => 'ASC');
+        $zaveappteam_query = new WP_query( $args );
+
+        //the loop
+      
+
+        if($zaveappteam_query->have_posts()) {
+            
+             echo '<div class="row myrow">';
+            while ($zaveappteam_query->have_posts()){
+                $zaveappteam_query->the_post();
+               $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="row">';
+                echo '<div class="col-xs-4">';
+                echo '<img src="';
+                echo $url;
+                echo '" class="img-responsive img-circle" alt="testimonial" />';
+				echo '</div>';
+                echo '<div class="col-xs-8">';
+                echo '<h4>' . get_the_title() . '</h4>';
+                the_content();
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+            echo '</div>';
+        }
+    /* Restore original Post Data */
+		wp_reset_postdata();
+            ?>
+            
+</div>
+<!-- END OF SECTION 10 - ZAVEAPP TEAM -->
+
+<!-- SECTION 11 - PARTNERS --> 
+        
+<div class="container-fluid full-width" id="section11" >
+            <?php 
+		$query = new WP_Query( 'pagename=partners' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+                echo '<div class="row myrow">';
+				echo '<div class="col-xs-12 col-sm-6">';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-6 multilogo">';
+                
+$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$attr = array(
+    'class' => "attachment-$size wp-post-image",
+);
+foreach( $gallery as $image ) {
+     echo wp_get_attachment_image($image->ID, $attachment_id);
+}
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+            
+</div>
+<!-- END OF SECTION 11 - PARTNERS --> 
+        
+<!-- SECTION 12 - PRENSA --> 
+<div class="container-fluid full-width" id="section12" >
+    <?php 
+		$query = new WP_Query( 'pagename=prensa' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+                echo '<div class="row myrow">';
+				
+                echo '<div class="col-xs-12 col-sm-8 multilogo">';
+                the_content();
+                echo '</div>';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="custombutton">';
+                if (get_post_meta($post->ID, 'custombutton', true));
+                    
+                echo get_post_meta($post->ID, 'custombutton', true);
+                echo '</div>';
+				echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+    
+            
+</div>
+<!-- END OF SECTION 12 - PRENSA --> 
+
+<!-- SECTION 13 - CONTACTO --> 
+        
+<div class="container-fluid full-width" id="section13" >
+            <?php 
+		$query = new WP_Query( 'pagename=contacto' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				echo '<h2>' . get_the_title() . '</h2>';
+                echo '<div class="row myrow">';
+				echo '<div class="col-xs-12 col-sm-8">';
+				the_content();
+				echo '</div>';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="socialbutton">';
+                echo '<a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="https://www.facebook.com/zaveapp/" target="_blank"><p><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-medium" aria-hidden="true"></i> Medium</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="https://twitter.com/zaveapp" target="_blank"><p><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="" target="_blank"><p><i class="fa fa-skype" aria-hidden="true"></i> Skype</p></a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
         <small>index.php</small>
-        </div>
+</div>
+<!-- END OF SECTION 13 - CONTACTO --> 
 
 <?php get_footer(); ?>

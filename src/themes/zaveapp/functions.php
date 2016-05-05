@@ -27,3 +27,45 @@ function themeprefix_bootstrap_modals() {
 }
 
 add_action( 'wp_enqueue_scripts', 'themeprefix_bootstrap_modals');
+
+//I am using Mike's Sinkula flexslider
+function add_flexslider() {    
+    $attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
+    if ($attachments) {        
+        echo '<div class="flexslider">';
+        echo '<ul class="slides">';
+    
+ // create the list items for images with captions
+    
+    foreach ( $attachments as $attachment_id => $attachment ) { 
+	
+		$theImage = wp_get_attachment_image($attachment_id, 'flexslider');
+		$theBlockquote = get_post_field('post_excerpt', $attachment->ID);
+	
+        echo '<li>';
+		echo $theImage;
+		echo '<blockquote>'.$theBlockquote. '&nbsp;</blockquote>';
+        echo '</li>';
+        
+    } 
+    
+    echo '</ul>';
+    echo '</div>';
+        ?>
+    <!-- End Slider -->
+        
+	<?php }// end see if images
+	
+} // end add flexslide 
+add_shortcode( 'flexslider', 'add_flexslider' ); 
+
+// Create FontAwesome Shortcode
+function fontawesome_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'icon' => 'icon',
+		), $atts, 'fa' );
+
+	return '<i class="' . $atts['icon'] .'"></i>';
+}
+add_shortcode( 'fa', 'fontawesome_func' );
