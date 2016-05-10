@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 	<!-- FAVICON -->
-	<link rel="icon" type="image/png" href="img/zaveicon.png">	
+	<link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/img/zaveicon.png">	
     <!-- END FAVICON -->
     
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
@@ -65,14 +65,35 @@
 
 </script>
 
-    
-    
-  
-    <!-- End  switch video -->    
+<script>
+$(document).ready(function(){  
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#navbar a").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      //window.location.hash = hash;
+    });
+  });
+});
+	</script>
+ 
     
     <!-- Begin Flex Slider -->
     <script>
-    $(window).load(function() {
+    $(document).ready(function() {
     $('.flexslider').flexslider({animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
     smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
     startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
@@ -93,11 +114,12 @@
 <!-- End wp head -->
 </head>
     
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" data-offset="50" >
 
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid full-width" id="navcont">
+    <div class="container" id="navcont">
+       
     <div class="navbar-header">
       
    
@@ -115,15 +137,21 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
     <div id="navbar" class="navbar-right navbar-collapse collapse">
                     
                 <ul class="nav navbar-nav">
-                    <li>Home</li>
-                    <li>Como Funciona</li>
-                    <li>Metas</li>
-                    <li>Nosotros</li>
-                    <li>Contacto</li>
+                     <?php
+                                    wp_nav_menu( array(
+                                        'menu'              => 'Main',                
+                                        'depth'             => 2,
+                                        'container'         => 'div',
+                                        'container_class'   => 'collapse navbar-collapse main-menu-select',
+                                        'menu_class'        => 'nav navbar-nav hashscroll',
+                                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                        'walker'            => new wp_bootstrap_navwalker())
+                                    );
+                                ?>
                 </ul>
   
     </div> <!-- END OF NAVBAR-COLLAPSE -->
-        
+      
  </div> <!-- END OF NAVCONT -->
     
 </nav> 

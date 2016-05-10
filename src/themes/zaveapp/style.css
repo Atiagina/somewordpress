@@ -34,18 +34,33 @@ body * {
     box-sizing: border-box;	/* declared width = rendered width */
 }
 
+body > .container-fluid {
+    padding-top: 60px;
+}
+
 a img {
 	border: 0;
 }
 
+#section1 > .container-fluid {
+    padding-top: 80px;
+}
 
+#footer > .container-fluid {
+    padding-top: 10px; !important
+}
 
 #section1,
 #section4,
-#section5 {
+#section5,
+#newsletter {
     padding:0; !important
 }
 
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
 
 /* END RESETS */
 
@@ -180,16 +195,16 @@ h4 {
 .navbar {
     min-height: 80px;
     background-color: white;
-    opacity: 0.8;
+    opacity: 0.9;
     font-family: OswaldDemiBold;
 }
 
 #navcont {
     padding-left: 0;
+    margin-bottom: 10px;
     /*margin-left: 20px; 
     margin-right: 0px;*/
 }
-
 
 a.navbar-brand {
     
@@ -216,9 +231,8 @@ background-position: center center;
     margin-top: 80px;
 }
 
+
 ul.nav.navbar-nav {
-    
-   margin-top: 40px; 
    margin-right: 0;
 }
 
@@ -229,14 +243,30 @@ ul.nav.navbar-nav li {
     text-align: center;
 }
 
+
+
 ul.nav.navbar-nav>li:hover,
-ul.nav.navbar-nav>li:focus
+ul.nav.navbar-nav>li:focus,
+ul.nav.navbar-nav > li > .active > a, 
+ul.nav.navbar-nav > li > .active > a:hover, 
+ul.nav.navbar-nav > li > .active > a:focus
 {
-    color: white;
-    background-color: black;
-    border-radius: 10px;
+    color: white; !important
+    background-color: black; !important
+    border-radius: 10px; !important
+    opacity: 1;
 }
 
+nav.navbar-default .navbar-nav > .active > a, 
+nav.navbar-default .navbar-nav > .open > a,
+nav.navbar-default .navbar-nav > .active > a:focus
+{
+    background-image: none; !important
+    background-color: black; !important
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
 
 /*section1 */
 
@@ -248,7 +278,6 @@ ul.nav.navbar-nav>li:focus
     position: relative;
     width: 100%;
     height: 100%;
-    margin-bottom: 20px;
 }
 
 .project-overlay {
@@ -296,6 +325,7 @@ ul.nav.navbar-nav>li:focus
     font-size: 8.5em;
     text-shadow: 5px 5px 5px #000;
 }
+
 
 .project-overlay-3 a{
     color: black; !important
@@ -406,6 +436,10 @@ ul.nav.navbar-nav>li:focus
     
 /* Section 2 - social */
 
+#section2 {
+    padding-top: 20px;
+}
+
 #section2 p {
     font-size: 1.4em;
 }
@@ -493,6 +527,8 @@ ul.nav.navbar-nav>li:focus
 
 /*SECTION 7 - METAS */
 
+
+
 .nav-pills>li>a {
     font-family: OswaldDemiBold;
     font-size: 1.5em;
@@ -512,23 +548,16 @@ ul.nav.navbar-nav>li:focus
     border: none;
 }
 
-.nav-pills>li>a:focus, 
-.nav-pills>li>a:hover {
+#section7 .nav-pills > li.active > a, 
+#section7 .nav-pills > li.active > a:hover, 
+#section7 .nav-pills > li.active > a:focus {
     color: white;
     background-color: black; !important
     border: 1px solid transparent; 
-    
     border-radius: 20px; 
 }
 
 
-.nav-pills>li.active>a, 
-.nav-pills>li.active>a:focus, 
-.nav-pills>li.active>a:hover {
-    color: white;
-    background-color: black; 
-    border-radius: 20px; 
-}
 
 .nav-pills>li.active {
 border: none;
@@ -543,6 +572,9 @@ border: none;
     border-top-right-radius: 20px;
 }
 
+.mainmeta {
+    border-right: 1px solid gray;
+}
 
 #ulmetas {
     margin-bottom: 20px;
@@ -554,7 +586,9 @@ border: none;
 }
 
 #compra,
-#viaja {
+#viaja,
+#redeem,
+#dona {
     border: 1px solid black;
     
 }
@@ -562,8 +596,7 @@ border: none;
 .metaslogos {
     color: white;
     background-color: black;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
     width: 100%;
 }
 
@@ -609,6 +642,40 @@ border: none;
     
 }
 
+/*NEWSLETTER */
+
+#newsletter h2 {
+    font-family: OswaldDemiBold;
+    text-transform:uppercase;
+}
+
+#newsletterdiv {
+    position: absolute;
+    float: right;
+    top: 10%;
+    right: 0;
+    max-width: 300px;
+    padding-right: 0;
+    margin-right:0;
+    text-align: right;
+}
+
+#newslettertext {
+    color: white;
+    background: black;
+    padding: 10px;
+    margin-right: 0;
+    margin-bottom:0;
+}
+
+
+#newslettertext2 {
+    color: black;
+    background: white;
+    opacity: .7;
+    padding: 10px;
+}
+
 /* SECTION 13 - CONTACT */
 
 .wpcf7-form-control.wpcf7-submit {
@@ -625,7 +692,7 @@ border: none;
     width: 100%;
     border: 1px solid black;
     border-radius: 10px;
-    padding-left: 10px;
+    padding: 10px;
 }
 
 .wpcf7-form input,
@@ -663,6 +730,29 @@ border: none;
     margin-top: -10px;
 }
 
+#menufooter ul {
+    margin: 0 auto;
+}
+
+#menufooter li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+    font-weight: bold;
+    
+}
+
+#frasefooter {
+    padding: 10px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+#menufooter li a {
+    color: black; !important
+    
+}
 /* MEDIA QUERIES */
 
 /* max-width: 800px */

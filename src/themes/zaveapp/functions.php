@@ -14,6 +14,21 @@ Version: 1.0
 add_theme_support('post-thumbnails');
 //
 
+
+// Register Custom Navigation Walker
+require_once('wp_bootstrap_navwalker.php');
+
+//Register custom menus
+if ( function_exists( 'register_nav_menus' ) ) {
+	register_nav_menus(
+		array(
+		  'main-menu' => 'Main',
+		  'footer-menu' => 'Footer-menu',
+			'social-menu' => 'social-menu'
+		)
+	);
+};
+
 //create page excerpts
 add_post_type_support('page', 'excerpt');
 //
@@ -24,11 +39,11 @@ function themeprefix_bootstrap_modals() {
 	
 	wp_enqueue_script( 'modaljs' );
 	wp_enqueue_style( 'modalcss' );
-}
+};
 
 add_action( 'wp_enqueue_scripts', 'themeprefix_bootstrap_modals');
 
-//I am using Mike's Sinkula flexslider
+//Mike Sinkula's flexslider
 function add_flexslider() {    
     $attachments = get_children(array('post_parent' => get_the_ID(), 'order' => 'ASC', 'orderby' => 'menu_order', 'post_type' => 'attachment', 'post_mime_type' => 'image','caption' => $attachment->post_excerpt, ));
     if ($attachments) {        

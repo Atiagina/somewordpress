@@ -12,6 +12,11 @@
             "name": "contact-form-7",
             "active": true,
             "version": "stable"
+        },
+         {
+            "name": "mailchimp-for-wp",
+            "active": true,
+            "version": "stable"
         }
     ],
     "wordpress-workflow" : [

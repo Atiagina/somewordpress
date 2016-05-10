@@ -135,6 +135,27 @@
                 
             </div>
         </div>
+
+<!-- begin footer menu -->
+<div class="container full-width">
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+    <nav class="footer-main" id="menufooter">
+   <?php
+                                    wp_nav_menu( array(
+                                        'menu'              => 'Main',                
+                                        'depth'             => 2,
+                                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                                        'walker'            => new wp_bootstrap_navwalker())
+                                    );
+                                ?>
+    </nav>
+	</div>
+    <div class="col-xs-12 col-sm-4" id="frasefooter">
+        <small>&copy;<?=date('Y');?> Made for Zave App </small>
+    </div>
+	</div>
+    </div> <!-- end footer menu -->
         
 <?php wp_footer(); ?>
 

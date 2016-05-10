@@ -217,7 +217,7 @@
 
 <!-- SECTION 2 - SOCIAL BUTTONS -->  
         
-<div class="container-fluid full-width" id="section2" >
+<div class="container full-width" id="section2" >
     <div class="row">
                 <div class="col-xs-12 col-sm-2 col-sm-offset-1">
                     <div class="socialbutton">
@@ -485,7 +485,7 @@ foreach( $gallery as $image ) {
                     </ul>
                     
                     <div class="tab-content">
-                <div id="viaja" class="tab-pane fade in active" style="background-image:url(img/viajeros.jpg);">
+                <div id="viaja" class="tab-pane fade in active">
                 <div class="row">
                     <?php 
 		$query = new WP_Query( 'pagename=viajar' );
@@ -493,12 +493,13 @@ foreach( $gallery as $image ) {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="col-xs-12 col-sm-8 mainmeta">';
 				echo '<h3>' . get_the_title() . '</h3>';
-				the_content();
+                the_content();
+				include 'api.php';
 				echo '</div>';
-                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
-                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="col-xs-12 multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -529,12 +530,12 @@ foreach( $gallery as $image ) {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="col-xs-12 col-sm-8 mainmeta">';
 				echo '<h3>' . get_the_title() . '</h3>';
 				the_content();
 				echo '</div>';
-                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
-                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="col-xs-12 multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -561,12 +562,12 @@ foreach( $gallery as $image ) {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="col-xs-12 col-sm-8 mainmeta">';
 				echo '<h3>' . get_the_title() . '</h3>';
 				the_content();
 				echo '</div>';
-                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
-                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="col-xs-12 multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -596,12 +597,12 @@ foreach( $gallery as $image ) {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-                echo '<div class="col-xs-12 col-sm-6">';
+                echo '<div class="col-xs-12 col-sm-8 mainmeta">';
 				echo '<h3>' . get_the_title() . '</h3>';
 				the_content();
 				echo '</div>';
-                echo '<div class="col-xs-12 col-sm-3 col-sm-offset-3">';
-                echo '<div class="col-xs-12 metaslogos multilogo"> ';
+                echo '<div class="col-xs-12 col-sm-4">';
+                echo '<div class="col-xs-12 multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -839,6 +840,9 @@ foreach( $gallery as $image ) {
 </div>
 <!-- END OF SECTION 12 - PRENSA --> 
 
+
+
+
 <!-- SECTION 13 - CONTACTO --> 
         
 <div class="container-fluid full-width" id="section13" >
@@ -873,6 +877,10 @@ foreach( $gallery as $image ) {
                 echo '<a href="" target="_blank"><p><i class="fa fa-skype" aria-hidden="true"></i> Skype</p></a>';
                 echo '</div>';
                 echo '</div>';
+                echo '<div class="col-xs-12 col-sm-6">';
+                if (get_post_meta($post->ID, 'direccion', true));
+                echo get_post_meta($post->ID, 'direccion', true);
+                echo '</div>';
                 echo '</div>';
 			}
 		}
@@ -883,5 +891,51 @@ foreach( $gallery as $image ) {
         <small>index.php</small>
 </div>
 <!-- END OF SECTION 13 - CONTACTO --> 
+
+<!-- SECTION NEWSLETTER --> 
+<div class="container-fluid full-width" id="newsletter" >
+            <div class="row row-fluid">
+                <div class="col-xs-12">
+                    <div class="relativesection">
+                        <?php 
+		$query = new WP_Query( 'pagename=newsletter' );
+        
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                echo '<div style="background-image: url("';
+                echo $url;
+                echo '")><img src="';
+                echo $url;
+                echo '" class="img-responsive" alt="zaveapppicnic"></div>';
+			
+                echo '<div id="newsletterdiv">';
+                echo '<h2 id="newslettertext">' . get_the_title() . '</h2>';
+                echo '<div id="newslettertext2">';
+                //the_content();
+                echo '<h5>Subscribe to our newsletter here and always know all the news about our promotions first!</h5>';
+                echo '<form action="#" method="post">';
+                echo '<div>';
+                echo '<label for="name">Text Input: </label>';
+                echo '<input type="text" name="name" id="name" value="" tabindex="1" />';
+                echo '<input type="submit" value="Submit" />';
+                echo '</div>';
+                echo '</form>';
+                echo '</div>';
+                echo '</div>'; 
+                            
+                }
+		}
+
+		/* Restore original Post Data */
+        wp_reset_postdata();
+		?>
+                    </div> <!-- end of relativesection --> 
+                </div>
+            </div> <!-- end of row --> 
+</div>
+<!-- END OF SECTION NEWSLETTER --> 
 
 <?php get_footer(); ?>
