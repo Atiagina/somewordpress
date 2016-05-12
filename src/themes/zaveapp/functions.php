@@ -10,11 +10,8 @@ Version: 1.0
 */
 
 
-//Enable Feauture images and post thumbnails
-add_theme_support('post-thumbnails');
-//
-
-
+//Enable Feature images and post thumbnails
+add_theme_support( 'post-thumbnails' );
 // Register Custom Navigation Walker
 require_once('wp_bootstrap_navwalker.php');
 
@@ -33,15 +30,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 add_post_type_support('page', 'excerpt');
 //
 
-function themeprefix_bootstrap_modals() {
-	wp_register_script ( 'modaljs' , get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '1', true );
-	wp_register_style ( 'modalcss' , get_stylesheet_directory_uri() . '/css/bootstrap.css', '' , '', 'all' );
-	
-	wp_enqueue_script( 'modaljs' );
-	wp_enqueue_style( 'modalcss' );
-};
 
-add_action( 'wp_enqueue_scripts', 'themeprefix_bootstrap_modals');
 
 //Mike Sinkula's flexslider
 function add_flexslider() {    
@@ -84,3 +73,55 @@ function fontawesome_func( $atts ) {
 	return '<i class="' . $atts['icon'] .'"></i>';
 }
 add_shortcode( 'fa', 'fontawesome_func' );
+
+//Register sidebars
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+	/* Register the primary sidebar. */
+	register_sidebar(
+		array(
+			'id' => 'primary',
+			'name' => __( 'Primary Sidebar' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+    register_sidebar(
+        array(
+			'id' => 'social',
+			'name' => __( 'Follow Us' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="row"><h3 class="widget-title">',
+			'after_title' => '</h3></div>'
+		)
+	);
+	
+}
+
+add_image_size('page-post-img', 500, 350, true);
+
+function exclude_testimonials($query){
+    if( !$query->is_category('testimonials') && $query->is_main_query() ){
+        $query->set('cat','-2');
+    }
+}
+
+add_action('pre_get_posts', 'exclude_testimonials');
+
+if ( function_exists( 'add_image_size' ) ) {
+add_image_size( 'new-size', 500, 350, true ); //(cropped)
+}
+
+add_filter('image_size_names_choose', 'my_image_sizes');
+
+function my_image_sizes($sizes) {
+$addsizes = array(
+"new-size" => __( "New Size")
+);
+$newsizes = array_merge($sizes, $addsizes);
+return $newsizes;
+}
+

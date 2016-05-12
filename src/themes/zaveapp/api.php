@@ -36,6 +36,8 @@
 
                 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700">
 <style type="text/css">
+    
+
 /* CALENDARIOS */
 .ui-widget.ui-widget-content.ui-datepicker {background-color:#b2deda;}
 .ui-datepicker .ui-datepicker-header {background-color:#cccccc !important; border-color:#cccccc; color:#222222 !important;}
@@ -64,24 +66,24 @@
 
 /* *************************************** */
 /* GENERAL */
-.bdtslqbx-body-color label {color: #6e566e;}
+.bdtslqbx-body-color label {color: black;}
 
     .bdtslqbx-main-bg {background: Transparent;}
-    .liquidbox-fixed-height-box {height:145px;}
+    .liquidbox-fixed-height-box {height:200px;}
 .bdtslqbx-border-color {border-color:#343d35;}
 
 /* TABS INACTIVAS */
-.bdtslqbx-tab-bg.bdtslqbx-tab-color {background: #009687; color: #ffffff;}
-.bdtslqbx-tab-bg.bdtslqbx-tab-color i {color:#ffffff;}
+.bdtslqbx-tab-bg.bdtslqbx-tab-color {background: #ffffff; color: black;}
+.bdtslqbx-tab-bg.bdtslqbx-tab-color i {color:black;}
 
     
-.bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs a {color: #ffffff;}
-.bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs i {color:#ffffff;}
+.bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs a {color: black;}
+.bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs i {color: black;}
 
-.bdtslqbx-template4.liquidbox-tabs-opt2 .liquidbox-tabs a {color: #ffffff;}
+.bdtslqbx-template4.liquidbox-tabs-opt2 .liquidbox-tabs a {color: black;}
     
 /* TABS ACTIVAS */
-.is-active-tab .bdtslqbx-tab-bg.bdtslqbx-tab-color {background: #b2deda; color: #ffffff;}
+.is-active-tab .bdtslqbx-tab-bg.bdtslqbx-tab-color {background: black; color: #ffffff;}
 .is-active-tab .bdtslqbx-tab-bg.bdtslqbx-tab-color i {color:#ffffff;}
 
 .bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs .is-active-tab a {color: #ffffff;}
@@ -99,7 +101,7 @@
 /*asiga color al tab activo en el template 3 opcion tabs 1*/
 .bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs li.is-active-tab a:before,
 /*asiga color al tab activo en el template 2 opcion tabs 2*/
-.bdtslqbx-template4.liquidbox-tabs-opt2 .liquidbox-tabs li.is-active-tab a:before {background: #b2deda; color: ffffff);}
+.bdtslqbx-template4.liquidbox-tabs-opt2 .liquidbox-tabs li.is-active-tab a:before {background: black; color: #ffffff);}
 
 /*asiga color al tab activo en el template 3 opcion tabs 1*/
 .bdtslqbx-template3.liquidbox-tabs-opt1 .liquidbox-tabs li.is-active-tab a:before i,

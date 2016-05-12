@@ -1,7 +1,9 @@
+
 <div class="container-fluid full-width" id="section14" >
-            <div class="row row-fluid">
+            <div class="row row-fluid footerleft">
                 <div class="col-xs-12 col-sm-3">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="footerlogo" alt="Zave App logo" height=40>
+                    <a href="<?php $url = home_url();
+echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="footerlogo" alt="Zave App logo" height=40></a>
                 </div>
                 <div class="col-xs-12 col-sm-2">
             <?php 
@@ -134,11 +136,18 @@
                         </div>
                 
             </div>
-        </div>
+        
 
 <!-- begin footer menu -->
+
+    </div> <!-- end of section 14 -->
+
 <div class="container full-width">
-<div class="row">
+    
+    <div class="row">
+        
+    
+   
     <div class="col-xs-12 col-sm-8">
     <nav class="footer-main" id="menufooter">
    <?php
@@ -151,12 +160,17 @@
                                 ?>
     </nav>
 	</div>
-    <div class="col-xs-12 col-sm-4" id="frasefooter">
+        <div class="col-xs-12 col-sm-4" id="frasefooter">
         <small>&copy;<?=date('Y');?> Made for Zave App </small>
     </div>
+    
 	</div>
-    </div> <!-- end footer menu -->
-        
+    </div>
+
+	
+<a href="#section1" class="backtotop">↑</a>
+
+   
 <?php wp_footer(); ?>
 
    </body> 

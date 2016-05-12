@@ -8,19 +8,63 @@
                 
         <div class="col-xs-12 customfull">
             
-            <div class="row invisible storebtns"> 
+            <div class="row customvisible"> 
+                <div class="storebtns">
                     
-                    <div class="col-xs-6"><a href="http://apple.co/1M4yQRi" class="btn btn-app-download storebtn" target="_blank">
-                        <i class="fa fa-apple myicon"></i>
-                        <strong>Bajar App<br>desde App Store</strong>
-                    </a></div>
-                    <div class="col-xs-6"><a href="http://bit.ly/1f1hF5U" class="btn btn-app-download storebtn" target="_blank">
-                        <i class="fa fa-android myicon"></i>
-                        <strong>Bajar App<br> 
-                       desde Play Store</strong>
-                    </a>
+                    <div class="col-xs-6"><?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'appstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'appstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-apple myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'appstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'appstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?></div>
+                    <div class="col-xs-6"><?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'playstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'playstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-android myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'playstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'playstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
                     </div>
                     </div>
+                </div>
                     
             <div class="relativesection">
                   <?php 
@@ -30,7 +74,7 @@
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'main-image' );
                 echo '<div id="picnic2" style="background-image: url("';
                 echo $url;
                 echo '")><img src="';
@@ -205,8 +249,29 @@
                     </div>
             </div> <!-- end of project-overlay-4 -->
         </div> <!-- end of relativesection --> 
-            <div class="row invisible">
-                        <div class="col-xs-12"><h1 class="ahorra">Ahorra y viaja con Zave App!</h1></div>
+            <div class="row customvisible">
+                        <div class="col-xs-12">
+                            
+                <?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<h1 class="ahorra">';
+                if (get_post_meta($post->ID, 'frase', true));
+                    
+                echo get_post_meta($post->ID, 'frase', true);
+                echo '</h1>';
+				
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                </div>
                 
                     </div>
         </div>
@@ -231,7 +296,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <div class="socialbutton">
-                    <a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-medium" aria-hidden="true"></i> Medium</p></a>
+                    <a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-2">
@@ -309,7 +374,7 @@
                 echo $url;
                 echo '")><img src="';
                 echo $url;
-                echo '" class="img-responsive" alt="zaveapppicnic"></div>';
+                echo '" class="img-responsive asidesimple" alt="zaveapppicnic"></div>';
 			
                 echo '<div id="pintext">';
                 echo '<h2 id="onpintext">' . get_the_title() . '</h2>';
@@ -539,7 +604,7 @@ foreach( $gallery as $image ) {
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
-    'class' => "attachment-$size wp-post-image",
+    'class' => "attachment-size wp-post-image",
 );
 foreach( $gallery as $image ) {
      echo wp_get_attachment_image($image->ID, $attachment_id);
@@ -696,7 +761,7 @@ foreach( $gallery as $image ) {
 				echo '<h2>' . get_the_title() . '</h2>';
                 echo '<div class="row myrow">';
 				
-                echo '<div class="col-xs-12 col-sm-6 multilogo">';
+                echo '<div class="col-xs-12 col-sm-6">';
                 the_content();
                 echo '</div>';
                 echo '<div class="col-xs-12 col-sm-6">';
@@ -790,7 +855,7 @@ foreach( $gallery as $image ) {
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
-    'class' => "attachment-$size wp-post-image",
+    'class' => "attachment-size wp-post-image",
 );
 foreach( $gallery as $image ) {
      echo wp_get_attachment_image($image->ID, $attachment_id);
@@ -874,7 +939,10 @@ foreach( $gallery as $image ) {
                 echo '<a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>';
                 echo '</div>';
                 echo '<div class="socialbutton">';
-                echo '<a href="" target="_blank"><p><i class="fa fa-skype" aria-hidden="true"></i> Skype</p></a>';
+                echo '<a href="" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>';
+                echo '</div>';
+                echo '<div class="socialbutton">';
+                echo '<a href="" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>';
                 echo '</div>';
                 echo '</div>';
                 echo '<div class="col-xs-12 col-sm-6">';
@@ -885,13 +953,74 @@ foreach( $gallery as $image ) {
 			}
 		}
 
+
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-        <small>index.php</small>
 </div>
 <!-- END OF SECTION 13 - CONTACTO --> 
 
+<div class="container-fluid full-width" id="sectionstore">
+
+    <div class="row myrow"> 
+                    
+                    <div class="col-xs-6 storefooter"><?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'appstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'appstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-apple myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'appstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'appstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+        </div>
+        <div class="col-xs-6 storefooter">
+                        <?php 
+		$query = new WP_Query( 'pagename=main-image' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				
+                echo '<a href="';
+                if (get_post_meta($post->ID, 'playstorelink', true));
+                    
+                echo get_post_meta($post->ID, 'playstorelink', true);
+                echo '" class="btn btn-app-download storebtn" target="_blank">';
+				echo '<i class="fa fa-android myicon"></i> ';
+                echo '<strong>';
+                if (get_post_meta($post->ID, 'playstoretext', true));
+                    
+                echo get_post_meta($post->ID, 'playstoretext', true);
+                echo '</strong>';
+                echo '</a>';
+                
+			}
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                        
+        </div>
+    </div>
+</div>
 <!-- SECTION NEWSLETTER --> 
 <div class="container-fluid full-width" id="newsletter" >
             <div class="row row-fluid">
@@ -909,20 +1038,12 @@ foreach( $gallery as $image ) {
                 echo $url;
                 echo '")><img src="';
                 echo $url;
-                echo '" class="img-responsive" alt="zaveapppicnic"></div>';
+                echo '" class="img-responsive asidesimple" alt="zaveapppicnic"></div>';
 			
                 echo '<div id="newsletterdiv">';
                 echo '<h2 id="newslettertext">' . get_the_title() . '</h2>';
                 echo '<div id="newslettertext2">';
-                //the_content();
-                echo '<h5>Subscribe to our newsletter here and always know all the news about our promotions first!</h5>';
-                echo '<form action="#" method="post">';
-                echo '<div>';
-                echo '<label for="name">Text Input: </label>';
-                echo '<input type="text" name="name" id="name" value="" tabindex="1" />';
-                echo '<input type="submit" value="Submit" />';
-                echo '</div>';
-                echo '</form>';
+                the_content();
                 echo '</div>';
                 echo '</div>'; 
                             

@@ -19,8 +19,8 @@
     <link href="<?php bloginfo('template_url'); ?>/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/bootstrap-social.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_url'); ?>/css/style.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/flexslider2.css" rel="stylesheet" type="text/css">
+    <link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet">
     
     <!-- FONT STYLES -->
     <style>
@@ -36,40 +36,118 @@
 
     </style>
     
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
-    <!-- Begin switch video -->
-    
-
     
 <script type="text/javascript">
     $(document).ready(function(){
         /* Get iframe src attribute value i.e. YouTube video url
         and store it in a variable */
         var url = $("#zaveVideo").attr('src');
-
         /* Assign empty url value to the iframe src attribute when
         modal hide, which stop the video playing */
         $("#videoModal").on('hide.bs.modal', function(){
             $("#zaveVideo").attr('src', '');
         });
-
         /* Assign the initially stored url back to the iframe src
         attribute when modal is displayed again */
         $("#videoModal").on('show.bs.modal', function(){
             $("#zaveVideo").attr('src', url);
         });
     });
-
 </script>
-
 <script>
+/* Scripts for Zaveapp Theme */
+
+
+   /**
+ * inViewport jQuery plugin by Roko C.B.
+ * http://stackoverflow.com/a/26831113/383904
+ * Returns a callback function with an argument holding
+ * the current amount of px an element is visible in viewport
+ * (The min returned value is 0 (element outside of viewport)
+ */
+;(function($, win) {
+  $.fn.inViewport = function(cb) {
+     return this.each(function(i,el) {
+       function visPx(){
+         var elH = $(el).outerHeight(),
+             H = $(win).height(),
+             r = el.getBoundingClientRect(), t=r.top, b=r.bottom;
+         return cb.call(el, Math.max(0, t>0? Math.min(elH, H-t) : (b<H?b:H)));  
+       }
+       visPx();
+       $(win).on("resize scroll", visPx);
+     });
+  };
+}(jQuery, window));
+
+
+    $(document).ready(function(){  $(".multilogo").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInRight") ;
+});
+});
+    
+    $(document).ready(function(){  $(".socialbutton").inViewport(function(px){
+    if(px) $(this).addClass("animated rubberBand") ;
+});
+});
+    
+    $(document).ready(function(){  $(".asidesimple").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInLeft") ;
+});
+});
+    $(document).ready(function(){  $("#pintext").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInUp") ;
+});
+});
+    
+    $(document).ready(function(){  $("#newsletterdiv").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInUp") ;
+});
+});
+    
+    $(document).ready(function(){  $(".myicon").inViewport(function(px){
+    if(px) $(this).addClass("animated bounce") ;
+});
+});
+    
+    $(document).ready(function(){  $(".storebtn").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInDown") ;
+});
+});
+    
+    $(document).ready(function(){  $(".ahorra").inViewport(function(px){
+    if(px) $(this).addClass("animated bounce") ;
+});
+});
+    
+    $(document).ready(function(){  $(".isteps").inViewport(function(px){
+    if(px) $(this).addClass("animated rubberBand") ;
+});
+});
+    
+    $(document).ready(function(){  $("h2").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInLeft") ;
+});
+});
+    $(document).ready(function(){  $(".img-circle").inViewport(function(px){
+    if(px) $(this).addClass("animated pulse") ;
+});
+});
+     $(document).ready(function(){  $("#section5").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInRight") ;
+});
+});
+    
+
+
 $(document).ready(function(){  
 
   // Add smooth scrolling on all links inside the navbar
-  $("#navbar a").on('click', function(event) {
+  $('#navbar a[href^="#"]').on('click', function(event) {
 
     // Prevent default anchor click behavior
     event.preventDefault();
@@ -88,20 +166,39 @@ $(document).ready(function(){
     });
   });
 });
-	</script>
+
+
+	          
+jQuery(document).ready(function() {
+		var offset = 220;
+		var duration = 500;
+		jQuery(window).scroll(function() {
+			if (jQuery(this).scrollTop() > offset) {
+				jQuery('.backtotop').fadeIn(duration);
+			} else {
+				jQuery('.backtotop').fadeOut(duration);
+			}
+		});
  
-    
-    <!-- Begin Flex Slider -->
-    <script>
-    $(document).ready(function() {
+		jQuery('.backtotop').click(function(event) {
+			event.preventDefault();
+			jQuery('html, body').animate({scrollTop: 0}, duration);
+			return false;
+		})
+	});
+
+
+$(document).ready(function() {
     $('.flexslider').flexslider({animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
     smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
     startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
     slideshow: true,                //Boolean: Animate slider automatically
-    slideshowSpeed: 4000,});
+    slideshowSpeed: 3200,});
     });
-    </script>
-    <!-- End Flex Slider -->
+    
+    
+    
+</script> 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,16 +211,16 @@ $(document).ready(function(){
 <!-- End wp head -->
 </head>
     
-<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" data-offset="50" >
+<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" id="body" data-offset="50" >
 
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container" id="navcont">
+    <div class="container-fluid full-width" id="navcont">
        
     <div class="navbar-header">
       
    
-                    <button id="nav-toggle-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button id="toggle-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -134,9 +231,9 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
                     
     </div> <!-- END OF NAVBAR-HEADER -->
                 
-    <div id="navbar" class="navbar-right navbar-collapse collapse">
+ 
                     
-                <ul class="nav navbar-nav">
+                <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
                      <?php
                                     wp_nav_menu( array(
                                         'menu'              => 'Main',                
@@ -152,7 +249,6 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
   
     </div> <!-- END OF NAVBAR-COLLAPSE -->
       
- </div> <!-- END OF NAVCONT -->
     
 </nav> 
            
