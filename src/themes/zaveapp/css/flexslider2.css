@@ -286,7 +286,7 @@ div.flexslider blockquote {
 }
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1240px) {
     div.flexslider blockquote {
 	font-family: "Helvetica", sans-serif;
     padding: 15px;

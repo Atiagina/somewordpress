@@ -38,12 +38,166 @@
     </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        /* Get iframe src attribute value i.e. YouTube video url
+        and store it in a variable */
+        var url = $("#zaveVideo").attr('src');
+        /* Assign empty url value to the iframe src attribute when
+        modal hide, which stop the video playing */
+        $("#videoModal").on('hide.bs.modal', function(){
+            $("#zaveVideo").attr('src', '');
+        });
+        /* Assign the initially stored url back to the iframe src
+        attribute when modal is displayed again */
+        $("#videoModal").on('show.bs.modal', function(){
+            $("#zaveVideo").attr('src', url);
+        });
+    });
+</script>
+<script>
+/* Scripts for Zaveapp Theme */
 
+
+   /**
+ * inViewport jQuery plugin by Roko C.B.
+ * http://stackoverflow.com/a/26831113/383904
+ * Returns a callback function with an argument holding
+ * the current amount of px an element is visible in viewport
+ * (The min returned value is 0 (element outside of viewport)
+ */
+;(function($, win) {
+  $.fn.inViewport = function(cb) {
+     return this.each(function(i,el) {
+       function visPx(){
+         var elH = $(el).outerHeight(),
+             H = $(win).height(),
+             r = el.getBoundingClientRect(), t=r.top, b=r.bottom;
+         return cb.call(el, Math.max(0, t>0? Math.min(elH, H-t) : (b<H?b:H)));  
+       }
+       visPx();
+       $(win).on("resize scroll", visPx);
+     });
+  };
+}(jQuery, window));
+
+
+    $(document).ready(function(){  $(".multilogo").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInRight") ;
+});
+});
+    
+    $(document).ready(function(){  $(".socialbutton").inViewport(function(px){
+    if(px) $(this).addClass("animated rubberBand") ;
+});
+});
+    
+    $(document).ready(function(){  $(".asidesimple").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInLeft") ;
+});
+});
+    $(document).ready(function(){  $("#pintext").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInUp") ;
+});
+});
+    
+    $(document).ready(function(){  $("#newsletterdiv").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInUp") ;
+});
+});
+    
+    $(document).ready(function(){  $(".myicon").inViewport(function(px){
+    if(px) $(this).addClass("animated bounce") ;
+});
+});
+    
+    $(document).ready(function(){  $(".storebtn").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInDown") ;
+});
+});
+    
+    $(document).ready(function(){  $(".ahorra").inViewport(function(px){
+    if(px) $(this).addClass("animated bounce") ;
+});
+});
+    
+    $(document).ready(function(){  $(".isteps").inViewport(function(px){
+    if(px) $(this).addClass("animated rubberBand") ;
+});
+});
+    
+    $(document).ready(function(){  $("h2").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInLeft") ;
+});
+});
+    $(document).ready(function(){  $(".img-circle").inViewport(function(px){
+    if(px) $(this).addClass("animated pulse") ;
+});
+});
+     $(document).ready(function(){  $("#section5").inViewport(function(px){
+    if(px) $(this).addClass("animated slideInRight") ;
+});
+});
+    
+
+
+$(document).ready(function(){  
+
+  // Add smooth scrolling on all links inside the navbar
+  $('#navbar a[href^="#"]').on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      //window.location.hash = hash;
+    });
+  });
+});
+
+
+	          
+jQuery(document).ready(function() {
+		var offset = 220;
+		var duration = 500;
+		jQuery(window).scroll(function() {
+			if (jQuery(this).scrollTop() > offset) {
+				jQuery('.backtotop').fadeIn(duration);
+			} else {
+				jQuery('.backtotop').fadeOut(duration);
+			}
+		});
+ 
+		jQuery('.backtotop').click(function(event) {
+			event.preventDefault();
+			jQuery('html, body').animate({scrollTop: 0}, duration);
+			return false;
+		})
+	});
+
+
+$(document).ready(function() {
+    $('.flexslider').flexslider({animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+    smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
+    startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+    slideshow: true,                //Boolean: Animate slider automatically
+    slideshowSpeed: 3200,});
+    });
+    
+    
+    
+</script> 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,7 +213,7 @@
 
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container" id="pagenavcont">
+    <div class="container-fluid full-width" id="pagenavcont">
        
     <div class="navbar-header">
       
@@ -74,14 +228,14 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
     </nav>
 
 <div class="container-fluid full-width pagecontent">
-    <div class="row my row">
+    <div class="row myrow">
         
-        <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="col-sm-12 col-md-6 col-md-offset-1">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?><!-- start the loop-->
 <h2><?php the_title(); ?></h2>
 <div class="row myrow">
     <div class="col-xs-12">
-    <?php echo get_the_post_thumbnail( $page->ID, 'page-post-img' ); ?>
+    <?php echo get_the_post_thumbnail( $page->ID, 'page-post-img', array( 'class' => 'img-responsive' )  ); ?>
     <?php the_content(); ?>
         </div>
     </div>
@@ -89,7 +243,7 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
         </div>
         
     
-        <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+        <div class="col-sm-12 col-md-2 col-md-offset-1">
            <div class="socialbutton">
 <a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
 </div>
@@ -116,9 +270,9 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
         
         </div>
     </div>
-<div class="container-fluid full-width" id="sectionstore">
+<div class="container full-width" id="sectionstore">
 
-    <div class="row myrow"> 
+    <div class="row row-fluid"> 
                     
                     <div class="col-xs-6 storefooter"><?php 
 		$query = new WP_Query( 'pagename=main-image' );

@@ -22,12 +22,69 @@ Text Domain: zaveapp
 */
 
 /* RESETS */
-body {
-	margin: 0 auto;
-    width: 100%;
+
+/* v2.0 | 20110126
+  http://meyerweb.com/eric/tools/css/reset/ 
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
 	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*end of v2.0 resets, start of my resets */
+
+body {
+margin: 0;
 	box-sizing: border-box;	/* declared width = rendered width */
-    overflow-x: hidden; !important
+    overflow-x: hidden; 
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
 }
 
 body * {
@@ -36,7 +93,13 @@ body * {
 
 body > .container-fluid {
     padding-top: 60px;
-    
+    width: 100%;
+    margin: 0;
+}
+
+.row {
+  padding-right: 0px;
+  margin-right: 0px;
 }
 
 a img {
@@ -370,7 +433,8 @@ nav.navbar-default .navbar-nav > .active > a:focus
     text-decoration: none;!important
 }
 
-#section1 .project-overlay-4 h1.ahorra {
+#section1 .project-overlay-4 h1.ahorra,
+#section1 .customvisible h1.ahorra {
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -403,15 +467,7 @@ nav.navbar-default .navbar-nav > .active > a:focus
     
 }
 
-#Div2 {
-    position: absolute;
-    bottom: 20px;
-    left: 30%;
-}
 
-#Div2 i {
-    font-size: 2.5em;
-}
 
 .customfull {
     padding: 0px; !important
@@ -571,9 +627,9 @@ nav.navbar-default .navbar-nav > .active > a:focus
     border: none;
 }
 
-#section7 .nav-pills > li.active > a, 
-#section7 .nav-pills > li.active > a:hover, 
-#section7 .nav-pills > li.active > a:focus {
+#section7b .nav-pills > li.active > a, 
+#section7b .nav-pills > li.active > a:hover, 
+#section7b .nav-pills > li.active > a:focus {
     color: white;
     background-color: black; !important
     border: 1px solid transparent; 
@@ -889,6 +945,10 @@ border: none;
     #picnic2 {
         height: 440px;
     }
+    
+    .pagecontent.attachment-page-post-img.size-page-post-img.wp-post-image {
+        max-width: 400px; !important
+    }
 }
 
 @media screen and (max-width: 1025px){
@@ -918,6 +978,22 @@ border: none;
     
 }
 
+@media screen and (max-width: 993px){
+    .socialbutton {
+    
+    font-size: .6em;
+        height: 40px;
+}
+    
+    .pagecontent .socialbutton {
+    
+    font-size: 1.2em;
+        height: 50px;
+     margin: 8px 40px;
+}
+    
+}
+
 @media screen and (max-width: 980px){
    
     
@@ -932,10 +1008,9 @@ border: none;
     
     
     
-    body > .container-fluid {
+    /*body > .container-fluid {
     padding-top: 80px;
-}
-    
+} */
     
     
 }
@@ -985,10 +1060,7 @@ border: none;
 @media screen and (max-width: 865px){
    
     
-    .socialbutton {
     
-    font-size: .7em;
-}
 }
 
 @media screen and (max-width: 830px){
@@ -1013,19 +1085,15 @@ border: none;
         height: 300px;
     }
     
-    .socialbutton {
-      margin-right: 30px;
-    margin-left: 30px;
-    }
+    
     
     #videobutton {
     font-size: 6em;
 }
     
-    #Div2 iframe {
-        width: 100%;
-        height: 100%;
-    }
+    .mainmeta {
+    border-right: none;
+}
     
     .navbar-collapse .collapse {
         display: inline; !important
@@ -1033,6 +1101,35 @@ border: none;
         z-index: 10000;
     }
     
+    #pagenavcont #pagearrow {
+    font-size: 1em;
+    }
+    
+    nav #pagenavcont {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+  body,
+  body .container-fluid { 
+    padding-right: 0px; !important
+    padding-left: 0px; !important
+  }
+   
+  input#HotelButton.bdtslqbx-submit--large.btn,
+   input#PackageButton.bdtslqbx-submit--large.btn {
+      min-width: 200px; !important
+  }
+    
+ .socialbutton {
+    
+    font-size: 1em;
+        height: 50px;
+     margin: 4px 30px;
+}
+ 
+}
 
 @media screen and (max-width: 680px){
    
@@ -1070,7 +1167,7 @@ border: none;
     display: none;
     }
     
-    .relativesection {
+    #section1 .relativesection {
       margin-bottom: 10px;  
     }
     
@@ -1154,6 +1251,11 @@ border: none;
     #navcont > div.navbar-header {
         width: 100%;
     }
+    
+    body {
+        width : 100%;
+    }
+
    
 }
 
@@ -1172,18 +1274,19 @@ border: none;
         font-size: 1.5em;
         color: black;
     }
+    
+    #logo {
+        height: 60px;
+    }
    
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 345px){
     .navbar.navbar-fixed-top {
         min-height: 60px;
         margin-top: 0;
     }
     
-    #logo {
-        height: 60px;
-    }
     
    #navcont > div.navbar-header > a {
         padding: 10px;
@@ -1198,10 +1301,11 @@ border: none;
         height: 160px;
     }
     
-    #Div2{
-        left: 10%;
-        bottom: 0;
+    #logo {
+       margin-left: 10px; 
     }
+    
+    
     
 }
 
@@ -1235,7 +1339,7 @@ border: none;
 
 .pagecontent {
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .pagecontent h2 {
@@ -1246,6 +1350,11 @@ border: none;
     background-color: #777;
 }
 
+
 .pagecontent img {
     margin: 15px auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 0 auto;
 }
+

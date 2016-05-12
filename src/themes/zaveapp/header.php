@@ -211,7 +211,7 @@ $(document).ready(function() {
 <!-- End wp head -->
 </head>
     
-<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" id="body" data-offset="50" >
+<body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" data-offset="50" >
 
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -227,7 +227,7 @@ $(document).ready(function() {
                         <span class="icon-bar"></span>
                     </button>
         <a class="navbar-brand" href="<?php $url = home_url();
-echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="logo" alt="Zave App logo" height=80></a>
+echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="logo" alt="Zave App logo" height=80;></a>
                     
     </div> <!-- END OF NAVBAR-HEADER -->
                 

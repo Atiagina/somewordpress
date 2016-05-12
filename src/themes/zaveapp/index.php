@@ -63,8 +63,8 @@
 		wp_reset_postdata();
 		?>
                     </div>
-                    </div>
-                </div>
+                    </div> <!-- end of div storebuttons --> 
+                </div> <!-- end of div customvisible --> 
                     
             <div class="relativesection">
                   <?php 
@@ -115,16 +115,14 @@
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-    </div>
-                
-<!-- End Video Modal -->   
+                            </div> <!-- end of embde-responsive --> 
+                            </div> <!-- end of modal-body --> 
+                        </div> <!-- end of modal-content --> 
+                    </div> <!-- end of modal-dialog --> 
+    </div> <!-- End Video Modal -->   
                        
-                <div class="project-overlay">
-                    <div class="row"> 
+    <div class="project-overlay">
+        <div class="row"> 
                     
                     <div class="col-xs-6"><?php 
 		$query = new WP_Query( 'pagename=main-image' );
@@ -181,48 +179,49 @@
 		?>
                         
         </div>
-    </div>
+    </div> <!-- end of row --> 
 </div> <!-- end of project-overlay -->  
                 
 <div class="project-overlay-2">
-                    <div class="row">
-                            <div class="col-xs-12 videocol">
-                               <a href="#videoModal" class="btn" data-toggle="modal"><i class="fa fa-play-circle" id="videobutton" aria-hidden="true"></i></a>
-                            </div> <!-- end of videocol --> 
-                    </div>
-                </div> <!-- end of project-overlay-2 --> 
+                        <div class="row">
+                                <div class="col-xs-12 videocol">
+                                   <a href="#videoModal" class="btn" data-toggle="modal"><i class="fa fa-play-circle" id="videobutton" aria-hidden="true"></i></a>
+                                </div> <!-- end of videocol --> 
+                        </div> <!-- end of row --> 
+</div> <!-- end of project-overlay-2 --> 
                 
-                <div class="project-overlay-3">  
+<div class="project-overlay-3">  
                 
-                    <div class="row">
-                        <div class="col-xs-12"><p id="clickvideo">
-                            <?php 
-		$query = new WP_Query( 'pagename=main-image' );
-		// The Loop
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				
-                echo '<a href="#videoModal" class="btn " data-toggle="modal">';
-                if (get_post_meta($post->ID, 'clickvideofrase', true));
-                    
-                echo get_post_meta($post->ID, 'clickvideofrase', true);
-                echo '</a>';
-				
-			}
-		}
+        <div class="row">
+            <div class="col-xs-12">
+                <p id="clickvideo">
+                                            <?php 
+                        $query = new WP_Query( 'pagename=main-image' );
+                        // The Loop
+                        if ( $query->have_posts() ) {
+                            while ( $query->have_posts() ) {
+                                $query->the_post();
 
-		/* Restore original Post Data */
-		wp_reset_postdata();
-		?>
+                                echo '<a href="#videoModal" class="btn " data-toggle="modal">';
+                                if (get_post_meta($post->ID, 'clickvideofrase', true));
+
+                                echo get_post_meta($post->ID, 'clickvideofrase', true);
+                                echo '</a>';
+
+                            }
+                        }
+
+                        /* Restore original Post Data */
+                        wp_reset_postdata();
+                        ?>
                             
-                            </p></div>
-                    </div>
-                </div> <!-- end of project-overlay-3 --> 
+                </p>
+            </div>
+        </div> <!-- end of row --> 
+</div> <!-- end of project-overlay-3 --> 
                         
-                <div class="project-overlay-4">  
-                    
-                    <div class="row">
+<div class="project-overlay-4">  
+        <div class="row">
                         <div class="col-xs-12">
                             <?php 
 		$query = new WP_Query( 'pagename=main-image' );
@@ -246,11 +245,13 @@
                             
                         </div>
                 
-                    </div>
-            </div> <!-- end of project-overlay-4 -->
-        </div> <!-- end of relativesection --> 
-            <div class="row customvisible">
-                        <div class="col-xs-12">
+        </div><!-- end of row --> 
+</div> <!-- end of project-overlay-4 -->
+                
+</div> <!-- end of relativesection --> 
+            
+<div class="row customvisible">
+    <div class="col-xs-12">
                             
                 <?php 
 		$query = new WP_Query( 'pagename=main-image' );
@@ -273,10 +274,11 @@
 		?>
                 </div>
                 
-                    </div>
-        </div>
+</div> <!-- end of row  cusomvisible --> 
+            
+        </div> <!-- end of div customfull --> 
 </div> <!-- end of row --> 
-</div>
+</div> <!-- end of div container -->
 
 <!-- END OF SECTION 1 - INTRODUCTION -->  
 
@@ -354,7 +356,7 @@
 		wp_reset_postdata();
 		?>
    
-</div>
+</div> <!-- end of container --> 
 <!-- END OF SECTION 3 - COMO FUNCIONA --> 
     
 <!-- SECTION 4 - ASI DE SIMPLE --> 
@@ -392,7 +394,7 @@
                     </div> <!-- end of relativesection --> 
                 </div>
             </div> <!-- end of row --> 
-</div>
+</div> <!-- end of container --> 
 <!-- END OF SECTION 4 - ASI DE SIMPLE --> 
 
 <!-- SECTION 5 - SLIDER --> 
@@ -477,9 +479,12 @@ foreach( $gallery as $image ) {
 		/* Restore original Post Data */
 		wp_reset_postdata();
  ?>
-            
+    
+</div> <!-- end of container -->
+
+<div class="container" id="section7b">  
     <div class="row myrow">
-                <div class="col-xs-12">
+        <div class="col-xs-12">
                     
                     
                     <ul class="nav nav-pills nav-justified" id="ulmetas">
@@ -547,9 +552,11 @@ foreach( $gallery as $image ) {
 		wp_reset_postdata();
  ?>
         
-                    </ul>
-                    
-                    <div class="tab-content">
+                    </ul> <!-- end of ul -->
+            </div> 
+        </div> <!-- end of row -->
+<div class="row">
+<div class="tab-content">
                 <div id="viaja" class="tab-pane fade in active">
                 <div class="row">
                     <?php 
@@ -564,7 +571,7 @@ foreach( $gallery as $image ) {
 				include 'api.php';
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
-                echo '<div class="col-xs-12 multilogo"> ';
+                echo '<div class="multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -582,8 +589,7 @@ foreach( $gallery as $image ) {
 		wp_reset_postdata();
 		?>
             
-    </div> <!-- end of row -->
-                     
+    </div> <!-- end of row -->           
                     
         </div> <!-- end of div viaja --> 
                         
@@ -600,7 +606,7 @@ foreach( $gallery as $image ) {
 				the_content();
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
-                echo '<div class="col-xs-12 multilogo"> ';
+                echo '<div class="multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -632,7 +638,7 @@ foreach( $gallery as $image ) {
 				the_content();
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
-                echo '<div class="col-xs-12 multilogo"> ';
+                echo '<div class="multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -667,7 +673,7 @@ foreach( $gallery as $image ) {
 				the_content();
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
-                echo '<div class="col-xs-12 multilogo"> ';
+                echo '<div class="multilogo"> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -686,13 +692,11 @@ foreach( $gallery as $image ) {
 		?>
         
         </div>
-                        </div> <!-- end of donar -->
+        </div> <!-- end of donar -->
                         
   </div> <!-- end of tab-content -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row --> 
-
-        </div>
+</div> <!-- end of row -->
+</div> <!-- end of container --> 
 <!-- END OF SECTION 7 - METAS --> 
         
 <div class="container-fluid full-width" id="section8" >
@@ -740,18 +744,18 @@ foreach( $gallery as $image ) {
                 echo '</div>';
                 echo '</div>';
             }
-            echo '</div>';
+            echo '</div>'; // end of row
         }
     /* Restore original Post Data */
 		wp_reset_postdata();
             ?>
             
-</div>
+</div> <!-- end of container --> 
 
 <!-- END OF SECTION 8 - TESTIMONIALS --> 
         
 <!-- SECTION 9 - NOSOTROS --> 
-        <div class="container-fluid full-width" id="section9" >
+<div class="container-fluid full-width" id="section9" >
             <?php 
 		$query = new WP_Query( 'pagename=nosotros' );
 		// The Loop
@@ -778,7 +782,7 @@ foreach( $gallery as $image ) {
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-        </div>
+</div> <!-- end of container --> 
 <!-- END OF SECTION 9 - NOSOTROS --> 
 
 <!-- SECTION 10 - ZAVE APP TEAM --> 
@@ -828,7 +832,7 @@ foreach( $gallery as $image ) {
                 echo '</div>';
                 echo '</div>';
             }
-            echo '</div>';
+            echo '</div>';  //end of row 
         }
     /* Restore original Post Data */
 		wp_reset_postdata();
@@ -869,7 +873,7 @@ foreach( $gallery as $image ) {
 		wp_reset_postdata();
 		?>
             
-</div>
+</div> <!-- end of container section11 --> 
 <!-- END OF SECTION 11 - PARTNERS --> 
         
 <!-- SECTION 12 - PRENSA --> 
@@ -957,14 +961,14 @@ foreach( $gallery as $image ) {
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-</div>
+</div> <!-- end of container --> 
 <!-- END OF SECTION 13 - CONTACTO --> 
 
 <div class="container-fluid full-width" id="sectionstore">
 
     <div class="row myrow"> 
                     
-                    <div class="col-xs-6 storefooter"><?php 
+        <div class="col-xs-6 storefooter"><?php 
 		$query = new WP_Query( 'pagename=main-image' );
 		// The Loop
 		if ( $query->have_posts() ) {
@@ -1019,8 +1023,9 @@ foreach( $gallery as $image ) {
 		?>
                         
         </div>
-    </div>
-</div>
+    </div> <!-- end of row --> 
+</div> <!-- end of container --> 
+
 <!-- SECTION NEWSLETTER --> 
 <div class="container-fluid full-width" id="newsletter" >
             <div class="row row-fluid">
@@ -1056,7 +1061,7 @@ foreach( $gallery as $image ) {
                     </div> <!-- end of relativesection --> 
                 </div>
             </div> <!-- end of row --> 
-</div>
+</div> <!-- end of container newsletter --> 
 <!-- END OF SECTION NEWSLETTER --> 
 
 <?php get_footer(); ?>

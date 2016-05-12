@@ -1,11 +1,12 @@
+<!-- starting footer -->
 
 <div class="container-fluid full-width" id="section14" >
-            <div class="row row-fluid footerleft">
+        <div class="row row-fluid footerleft">
                 <div class="col-xs-12 col-sm-3">
                     <a href="<?php $url = home_url();
 echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/zavelogo.png" id="footerlogo" alt="Zave App logo" height=40></a>
                 </div>
-                <div class="col-xs-12 col-sm-2">
+<div class="col-xs-12 col-sm-2">
             <?php 
 		$query = new WP_Query( 'pagename=aviso-de-privacidad' );
 		// The Loop
@@ -36,9 +37,9 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
 		wp_reset_postdata();
 		?>
      
-                        </div>
+                        </div> <!-- end of col -->
                     
-        <div class="col-xs-12 col-sm-2">
+<div class="col-xs-12 col-sm-2">
 <?php 
 		$query = new WP_Query( 'pagename=terminos-y-condiciones' );
 		// The Loop
@@ -68,8 +69,9 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-                </div>
-                <div class="col-xs-12 col-sm-2">
+</div> <!-- end of col -->
+                
+<div class="col-xs-12 col-sm-2">
             <?php 
 		$query = new WP_Query( 'pagename=faq' );
 		// The Loop
@@ -99,10 +101,10 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
 		/* Restore original Post Data */
 		wp_reset_postdata();
 		?>
-     
-                        </div>
+      
+</div> <!-- end of col -->
                 
-                <div class="col-xs-12 col-sm-2">
+<div class="col-xs-12 col-sm-2">
             <?php 
 		$query = new WP_Query( 'pagename=careers' );
 		// The Loop
@@ -115,7 +117,6 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
                 echo '<div id="careersModal" class="modal fade">';
                 echo '<div class="modal-dialog">';
                 echo '<div class="modal-content">';
-
                 echo '<div class="modal-header">';
                 echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
 				echo '<h4 class="modal-title">' . get_the_title() . '</h4>';
@@ -133,14 +134,12 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
 		wp_reset_postdata();
 		?>
      
-                        </div>
+</div> <!-- end of col -->
                 
-            </div>
+</div> <!-- end of row -->
         
 
-<!-- begin footer menu -->
-
-    </div> <!-- end of section 14 -->
+    </div> <!-- end of container section 14 -->
 
 <div class="container full-width">
     
@@ -164,11 +163,12 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
         <small>&copy;<?=date('Y');?> Made for Zave App </small>
     </div>
     
+<a href="#section1" class="backtotop">↑</a>
 	</div>
     </div>
 
 	
-<a href="#section1" class="backtotop">↑</a>
+
 
    
 <?php wp_footer(); ?>
