@@ -270,7 +270,7 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
         
         </div>
     </div>
-<div class="container full-width" id="sectionstore">
+<div class="container-fluid full-width" id="sectionstore">
 
     <div class="row row-fluid"> 
                     
