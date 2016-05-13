@@ -74,7 +74,7 @@ table {
 /*end of v2.0 resets, start of my resets */
 
 body {
-margin: 0;
+    margin: 0;
 	box-sizing: border-box;	/* declared width = rendered width */
     overflow-x: hidden; 
     width: 100%;
@@ -85,16 +85,34 @@ html {
    margin: 0px;
    height: 100%;
    width: 100%;
+    font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
 }
+
+
 
 body * {
     box-sizing: border-box;	/* declared width = rendered width */
 }
 
+/* END RESETS */
+
+/* MAIN STYLES */
+
 body > .container-fluid {
     padding-top: 60px;
     width: 100%;
     margin: 0;
+    padding-left: 0px; !important
+    padding-right: 0px; !important
+}
+
+
+#section1 > .container-fluid {
+    padding-top: 80px;
+}
+
+#footer > .container-fluid {
+    padding-top: 10px; !important
 }
 
 .row {
@@ -104,14 +122,6 @@ body > .container-fluid {
 
 a img {
 	border: 0;
-}
-
-#section1 > .container-fluid {
-    padding-top: 80px;
-}
-
-#footer > .container-fluid {
-    padding-top: 10px; !important
 }
 
 #section1,
@@ -126,8 +136,40 @@ select:-moz-focusring {
     text-shadow: 0 0 0 #000;
 }
 
-/* END RESETS */
+.myrow {
+    padding: 0 5%;
+}
 
+.myrow>div {
+    padding: 20px;
+}
+
+
+.multilogo img {
+    margin: 20px; !important
+    /* display: inline-block; !important */
+    float: left; !important
+    
+}
+
+
+.custombutton {
+    color: black;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    font-family: OswaldDemiBold;
+}
+
+.custombutton a,
+.custombutton a:hover,
+.custombutton a:focus {
+    color: black;
+    text-decoration: none;
+}
 
 
 /* Text meant only for screen readers. */
@@ -161,25 +203,7 @@ select:-moz-focusring {
 
 /*end of wordpress genereated classes */
 
-html {
-	font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
-}
-
-body {
-	font-size: 100%;   
-	font-family: Helvetica, Arial, sans-serif;
-	line-height: 1.5; 
-}
-
-.container-fluid {
-    padding: 0px; !important
-}
-
-
-
 /*FONTS AND TEXT STYLES */
-
-
 
 
 h1 {
@@ -216,42 +240,8 @@ h4 {
     line-height: 1.8em;
 }
 
-/*MAIN STYLES */
-
-.myrow {
-    padding: 0 5%;
-}
-
-.myrow>div {
-    padding: 20px;
-}
 
 
-.multilogo img {
-    margin: 20px; !important
-    /* display: inline-block; !important */
-    float: left; !important
-    
-}
-
-
-.custombutton {
-    color: black;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: center;
-    font-size: 2em;
-    font-family: OswaldDemiBold;
-}
-
-.custombutton a,
-.custombutton a:hover,
-.custombutton a:focus {
-    color: black;
-    text-decoration: none;
-}
 
 /*NAVIGATION*/
 
@@ -332,7 +322,7 @@ nav.navbar-default .navbar-nav > .active > a:focus
     border: none;
 }
 
-/*section1 */
+/*Section1 */
 
 
 
@@ -345,6 +335,7 @@ nav.navbar-default .navbar-nav > .active > a:focus
     position: relative;
     width: 100%;
     height: 100%;
+    margin-right: 0;
 }
 
 .project-overlay {
@@ -368,7 +359,6 @@ nav.navbar-default .navbar-nav > .active > a:focus
     width: 100%;
     height: 100%;
 }
-
 
 .project-overlay-4 {
     position: absolute;
@@ -402,11 +392,6 @@ nav.navbar-default .navbar-nav > .active > a:focus
     color: black; !important
     font-weight: 800;
 }
-
-#Div2 {
-  display: none;
-}
-
 
 
 #clickvideo {
@@ -468,7 +453,6 @@ nav.navbar-default .navbar-nav > .active > a:focus
 }
 
 
-
 .customfull {
     padding: 0px; !important
 }
@@ -497,14 +481,14 @@ nav.navbar-default .navbar-nav > .active > a:focus
     color: black; !important
 }
         
-        #button-video {
+#button-video {
             margin-left: 15px;
         }
         
 #videoModal {
-           position: fixed;
-            top: 20%;
-        }
+    position: fixed;
+    top: 20%;
+}
     
     
 /* Section 2 - social */
@@ -588,11 +572,6 @@ nav.navbar-default .navbar-nav > .active > a:focus
     padding: 10px;
 }
 
-/*#section4 .relativesection {
-    margin-bottom: 0;
-}
-*/
-
 
 /*SECTION 6 - SEGURIDAD */
 
@@ -601,8 +580,6 @@ nav.navbar-default .navbar-nav > .active > a:focus
      color: white;
      padding-bottom: 30px;
  }
-
-
 
 /*SECTION 7 - METAS */
 
@@ -871,10 +848,58 @@ border: none;
 	cursor: pointer;
 }
 
+/* SINGLE PAGE */
+
+
+#pagearrow {
+    padding-top: 15px;
+    float: right;
+    font-size: 1.5em;
+}
+
+#pagearrow a{
+    text-decoration: none;
+    color: #777;
+}
+
+#pagearrow a:hover,
+#pagearrow a:focus,
+#pagearrow a:active {
+    text-decoration: none;
+    color: #777;
+}
+
+#pagenavcont {
+    padding-left: 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.pagecontent {
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.pagecontent h2 {
+    font-family: OswaldDemiBold;
+}
+
+.pagecontent>div>div>.socialbutton {
+    background-color: #777;
+}
+
+
+.pagecontent img {
+    margin: 15px auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 0 auto;
+}
+
+
 
 /* MEDIA QUERIES */
 
-/* max-width: 800px */
 
 @media screen and (max-width: 1350px){
     #picnic2 {
@@ -1007,12 +1032,6 @@ border: none;
     }
     
     
-    
-    /*body > .container-fluid {
-    padding-top: 80px;
-} */
-    
-    
 }
 
 @media screen and (max-width: 940px){
@@ -1054,12 +1073,6 @@ border: none;
     .project-overlay-3 {
     top: 65%;
     }
-    
-}
-
-@media screen and (max-width: 865px){
-   
-    
     
 }
 
@@ -1170,15 +1183,7 @@ border: none;
     #section1 .relativesection {
       margin-bottom: 10px;  
     }
-    
-    /* .storebtns {
-        margin-bottom: 10px;
-    }
-    
-    */
-    
-   
-    
+
     .storebtn {
     max-width: 200px;
     height: 50px;
@@ -1200,9 +1205,6 @@ border: none;
         display: block;
         text-align: center;
     }
-
-    
-    
     
 }
 
@@ -1304,57 +1306,8 @@ border: none;
     #logo {
        margin-left: 10px; 
     }
-    
-    
-    
+      
 }
 
 
-/* SINGLE PAGE */
-
-
-#pagearrow {
-    padding-top: 15px;
-    float: right;
-    font-size: 1.5em;
-}
-
-#pagearrow a{
-    text-decoration: none;
-    color: #777;
-}
-
-#pagearrow a:hover,
-#pagearrow a:focus,
-#pagearrow a:active {
-    text-decoration: none;
-    color: #777;
-}
-
-#pagenavcont {
-    padding-left: 0;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.pagecontent {
-    padding: 20px;
-    margin-top: 50px;
-}
-
-.pagecontent h2 {
-    font-family: OswaldDemiBold;
-}
-
-.pagecontent>div>div>.socialbutton {
-    background-color: #777;
-}
-
-
-.pagecontent img {
-    margin: 15px auto;
-    max-width: 500px;
-    width: 100%;
-    padding: 0 auto;
-}
 

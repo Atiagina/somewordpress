@@ -17,6 +17,11 @@
             "name": "mailchimp-for-wp",
             "active": true,
             "version": "stable"
+        },
+        {
+            "name": "intercom",
+            "active": true,
+            "version": "stable"
         }
     ],
     "wordpress-workflow" : [
