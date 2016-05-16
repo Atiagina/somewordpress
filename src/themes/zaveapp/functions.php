@@ -124,4 +124,3 @@ $addsizes = array(
 $newsizes = array_merge($sizes, $addsizes);
 return $newsizes;
 }
-

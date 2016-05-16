@@ -77,6 +77,7 @@ body {
     margin: 0;
 	box-sizing: border-box;	/* declared width = rendered width */
     overflow-x: hidden; 
+    -webkit-overflow-x: hidden;
     width: 100%;
     min-height: 100%;
 }
@@ -86,6 +87,7 @@ html {
    height: 100%;
    width: 100%;
     font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
+    overflow-x: hidden;
 }
 
 
@@ -613,7 +615,10 @@ nav.navbar-default .navbar-nav > .active > a:focus
     border-radius: 20px; 
 }
 
-
+#section7b .nav > li > a:focus, 
+#section7b .nav > li > a:hover {
+    border-radius: 20px; !important
+}
 
 .nav-pills>li.active {
 border: none;
@@ -827,23 +832,23 @@ border: none;
 
 .backtotop:hover {
 	color: #fff !important;
-	background-color: #00786a;
 	text-decoration: none;
 }
  
 .backtotop {
 	display: none;
 	position: fixed;
-	bottom: 2rem;
+	bottom: 8rem;
 	right: 2rem;
-	width: 5.2rem;
-	height: 5.2rem;
-	line-height: 5.2rem;
+	width: 5rem;
+	height: 5rem;
+	line-height: 5rem;
 	font-size: 3rem;
 	color: #fff;
-	background-color: rgba(0,0,0,0.3);
+	background-color: #494f52;
 	text-decoration: none;
-	border-radius: 5.2rem;
+    border: 1px solid #21272a;
+	border-radius: 5rem;
 	text-align: center;
 	cursor: pointer;
 }

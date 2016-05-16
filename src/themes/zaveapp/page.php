@@ -470,9 +470,6 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
                         </div>
                 
             </div>
-        
-
-<!-- begin footer menu -->
 
     </div> <!-- end of section 14 -->
 

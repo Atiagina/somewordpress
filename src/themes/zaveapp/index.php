@@ -568,7 +568,20 @@ foreach( $gallery as $image ) {
                 echo '<div class="col-xs-12 col-sm-8 mainmeta">';
 				echo '<h3>' . get_the_title() . '</h3>';
                 the_content();
-				include 'api.php';
+            }
+        }
+                /* Restore original Post Data */
+		wp_reset_postdata();
+		?>
+                <!-- Begin Dynamic Sidebar -->
+    <?php dynamic_sidebar('social') ?>					
+    <!-- End Dynamic Sidebar -->
+                    <?php 
+		$query = new WP_Query( 'pagename=viajar' );
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
                 echo '<div class="multilogo"> ';
