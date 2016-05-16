@@ -844,6 +844,7 @@ border: none;
 	height: 5rem;
 	line-height: 5rem;
 	font-size: 3rem;
+    z-index: 100000;
 	color: #fff;
 	background-color: #494f52;
 	text-decoration: none;
