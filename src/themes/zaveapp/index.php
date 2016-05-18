@@ -828,23 +828,27 @@ foreach( $gallery as $image ) {
         if($zaveappteam_query->have_posts()) {
             
              echo '<div class="row myrow">';
+            echo '<div class="o-carousel">';
             while ($zaveappteam_query->have_posts()){
                 $zaveappteam_query->the_post();
-               $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-                echo '<div class="col-xs-12 col-sm-6">';
-                echo '<div class="row">';
+               $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' );
+                echo '<div class="item">';
+               echo '<div class="teamdiv">';
+               echo '<div class="row">';
                 echo '<div class="col-xs-4">';
                 echo '<img src="';
                 echo $url;
                 echo '" class="img-responsive img-circle" alt="testimonial" />';
 				echo '</div>';
-                echo '<div class="col-xs-8">';
+               echo '<div class="col-xs-8">';
                 echo '<h4>' . get_the_title() . '</h4>';
                 the_content();
-                echo '</div>';
-                echo '</div>';
+               echo '</div>';
+               echo '</div>';
+               echo '</div>';
                 echo '</div>';
             }
+            echo '</div>';  //end of owl-carousel 
             echo '</div>';  //end of row 
         }
     /* Restore original Post Data */

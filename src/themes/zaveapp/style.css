@@ -852,6 +852,7 @@ border: none;
 	border-radius: 5rem;
 	text-align: center;
 	cursor: pointer;
+    box-shadow: 0 6px 13px 0 rgba(0,0,0,.23); !important
 }
 
 /* SINGLE PAGE */
@@ -1314,6 +1315,39 @@ border: none;
     }
       
 }
+
+/*
+#intercom-container div.intercom-launcher-button {
+    background-color: #007969; !important
+}
+
+*/
+
+
+.teamdiv{
+    float: none; !important
+    margin: 10px auto;
+    padding: 20px;
+}
+
+div.owl-controls {
+    text-align: center;
+    font-size: 2em;
+}
+
+.owl-nav div.owl-prev,
+.owl-nav div.owl-next {
+    display: inline; !important
+}
+
+div.owl-prev {
+    margin-right: 10px;
+}
+
+div.owl-next {
+    margin-left: 10px;
+}
+
 
 
 

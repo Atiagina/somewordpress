@@ -21,9 +21,9 @@
     <link href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_url'); ?>/css/bootstrap-social.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/css/flexslider2.css" rel="stylesheet" type="text/css">
     <link href="<?php bloginfo('template_url'); ?>/css/animate.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/css/owl.carousel.css" rel="stylesheet">
     
     <!-- FONT STYLES -->
     <style>
@@ -42,7 +42,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
-    <script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
     
 <script type="text/javascript">
     $(document).ready(function(){
@@ -198,10 +199,32 @@ $(document).ready(function() {
     slideshow: true,                //Boolean: Animate slider automatically
     slideshowSpeed: 3200,});
     });
+
+$(document).ready(function() {
+    $('.o-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:2
+        }
+    }
+});
     
+    
+});
     
     
 </script> 
+    
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
