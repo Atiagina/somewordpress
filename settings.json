@@ -24,11 +24,6 @@
             "version": "stable"
         },
         {
-            "name": "ip2location-redirection",
-            "active": true,
-            "version": "stable"
-        },
-        {
             "name": "wp-migrate-db",
             "active": true,
             "version": "stable"
@@ -37,6 +32,12 @@
             "name": "bookingcom-official-searchbox",
             "active": true,
             "version": "stable"
+        }
+    ],
+     "custom_plugins" : [
+        {
+            "name": "ip2location-redirection",
+            "active": true
         }
     ],
     "wordpress-workflow" : [

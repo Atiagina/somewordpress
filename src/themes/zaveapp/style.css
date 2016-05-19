@@ -695,6 +695,31 @@ border: none;
 }
 
 
+.teamdiv{
+    float: none; !important
+    margin: 10px auto;
+    padding: 20px;
+}
+
+div.owl-controls {
+    text-align: center;
+    font-size: 2em;
+}
+
+.owl-nav div.owl-prev,
+.owl-nav div.owl-next {
+    display: inline; !important
+}
+
+div.owl-prev {
+    margin-right: 10px;
+}
+
+div.owl-next {
+    margin-left: 10px;
+}
+
+
 /*SECTION 12 - PRENSA */
 
 #section12 {
@@ -936,6 +961,10 @@ border: none;
         height: 500px;
     }
     
+    .socialbutton {
+    
+    font-size: .9em;
+}
     
 
 .project-overlay-2 {
@@ -1051,7 +1080,7 @@ border: none;
     }
     
     .project-overlay-4 {
-    top: 75%; 
+    top: 77%; 
     }
     
     .navbar-default {
@@ -1069,6 +1098,8 @@ border: none;
     }
     
 }
+
+
 
 @media screen and (max-width: 900px){
    
@@ -1093,6 +1124,10 @@ border: none;
     ul.nav.navbar-nav li {
     font-size: .8em;
 }
+    
+     .project-overlay-3 {
+    top: 67%;
+    }
     
 }
 
@@ -1290,6 +1325,23 @@ border: none;
    
 }
 
+@media screen and (max-width: 415px){
+    
+    #newsletterdiv {
+        top: 0%; !important
+    }
+    
+    #newslettertext2 {
+        padding: 5px;
+    }
+    
+    #newslettertext {
+        margin-top: 5px;
+    }
+    
+    
+}
+
 @media screen and (max-width: 345px){
     .navbar.navbar-fixed-top {
         min-height: 60px;
@@ -1313,6 +1365,10 @@ border: none;
     #logo {
        margin-left: 10px; 
     }
+    
+    #newslettertext2 {
+        font-size: .8em;
+    }
       
 }
 
@@ -1323,30 +1379,6 @@ border: none;
 
 */
 
-
-.teamdiv{
-    float: none; !important
-    margin: 10px auto;
-    padding: 20px;
-}
-
-div.owl-controls {
-    text-align: center;
-    font-size: 2em;
-}
-
-.owl-nav div.owl-prev,
-.owl-nav div.owl-next {
-    display: inline; !important
-}
-
-div.owl-prev {
-    margin-right: 10px;
-}
-
-div.owl-next {
-    margin-left: 10px;
-}
 
 
 
