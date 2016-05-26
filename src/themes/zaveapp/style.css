@@ -428,6 +428,13 @@ nav.navbar-default .navbar-nav > .active > a:focus
     color: black;
     font-family: Comfortaa; !important
     font-size: 5em; !important
+    letter-spacing: 1em; !important
+}
+
+#section1 .project-overlay-4 h1.ahorra small,
+#section1 .customvisible h1.ahorra small {
+    color: black;
+    text-transform: none;
 }
 
 .project-overlay > div > div > .storebtn,
@@ -633,9 +640,11 @@ border: none;
     border-top-right-radius: 20px;
 }
 
-.mainmeta {
+.mainmeta
+ {
     border-right: 1px solid gray;
 }
+
 
 #ulmetas {
     margin-bottom: 20px;
@@ -1150,6 +1159,11 @@ div.owl-next {
     border-right: none;
 }
     
+    .multilogo {
+    border-left: none;
+}
+    
+    
     .navbar-collapse .collapse {
         display: inline; !important
         width: 100%;
@@ -1372,12 +1386,12 @@ div.owl-next {
       
 }
 
-/*
+
 #intercom-container div.intercom-launcher-button {
-    background-color: #007969; !important
+    background-color: #F1582B; !important
 }
 
-*/
+
 
 
 

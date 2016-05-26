@@ -44,6 +44,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
 <script src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider-min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
     
 <script type="text/javascript">
     $(document).ready(function(){
@@ -128,10 +129,6 @@
 });
 });
     
-    $(document).ready(function(){  $(".isteps").inViewport(function(px){
-    if(px) $(this).addClass("animated rubberBand") ;
-});
-});
     
     $(document).ready(function(){  $("h2").inViewport(function(px){
     if(px) $(this).addClass("animated slideInLeft") ;

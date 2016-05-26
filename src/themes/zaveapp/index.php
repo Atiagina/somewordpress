@@ -651,7 +651,7 @@ foreach( $gallery as $image ) {
 				the_content();
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-4">';
-                echo '<div class="multilogo"> ';
+                echo '<div class=""> ';
                 
 $gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
@@ -874,7 +874,7 @@ foreach( $gallery as $image ) {
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-6 multilogo">';
                 
-$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$gallery = get_children( 'post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
     'class' => "attachment-size wp-post-image",
 );
@@ -963,7 +963,7 @@ foreach( $gallery as $image ) {
                 echo '<a href="" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>';
                 echo '</div>';
                 echo '<div class="socialbutton">';
-                echo '<a href="" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>';
+                echo '<a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>';
                 echo '</div>';
                 echo '</div>';
                 echo '<div class="col-xs-12 col-sm-6">';

@@ -253,52 +253,28 @@ display: none;
   cursor: default;
 }
 
+
 div.flexslider blockquote {
-    bottom: 20px;
+	
 	font-family: "Helvetica", sans-serif;
-    /*line-height: 1.5em;*/
     padding: 15px;
-    left: 20%;
-    bottom: 0;
-    position: absolute;
-    text-align: justify;
+    font-weight: bold;
+    font-size: 2em;
+    position: static;
+    text-align: center;
     width: 60%;
     z-index: 3;
-	margin: 0;
+	margin: 0 auto;
 	border: 0;
 }
+
 /* ====================================================================================================================
  * RESPONSIVE
  * ====================================================================================================================*/
 
-@media screen and (max-width: 1350px) {
-    div.flexslider blockquote {
-	font-family: "Helvetica", sans-serif;
-    padding: 15px;
-        position: absolute;
-        left: 20%;
-        bottom: 0;
-    text-align: center;
-    width: 60%;
-    z-index: 3;
-	margin: 0 auto;
-	border: 0;
-}
-}
 
-@media screen and (max-width: 1240px) {
-    div.flexslider blockquote {
-	font-family: "Helvetica", sans-serif;
-    padding: 15px;
-        position: absolute;
-        left: 10%;
-    text-align: center;
-    width: 80%;
-    z-index: 3;
-	margin: 0 auto;
-	border: 0;
-}
-}
+
+
 
 @media screen and (max-width: 1020px) {
   .flex-direction-nav .flex-prev {
@@ -310,14 +286,12 @@ div.flexslider blockquote {
     right: 10px;
   }
     
-    div.flexslider blockquote {
-	font-family: "Helvetica", sans-serif;
-    padding: 15px;
-    position: static;
-    text-align: center;
-    width: 80%;
-    z-index: 3;
-	margin: 0 auto;
-	border: 0;
+    
 }
+
+@media screen and (max-width: 420px) {
+    div.flexslider blockquote {
+	
+    font-size: 1em;
+    }
 }
