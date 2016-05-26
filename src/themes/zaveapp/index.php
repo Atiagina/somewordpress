@@ -437,7 +437,7 @@
 				echo '</div>';
                 echo '<div class="col-xs-12 col-sm-6 metaslogos multilogo">';
                 
-$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$gallery = get_children( 'post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
     'class' => "wp-post-image img-responsive",
 );
@@ -586,7 +586,7 @@ foreach( $gallery as $image ) {
                 echo '<div class="col-xs-12 col-sm-4">';
                 echo '<div class="multilogo"> ';
                 
-$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$gallery = get_children( 'post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
     'class' => "attachment-$size wp-post-image",
 );
@@ -621,7 +621,7 @@ foreach( $gallery as $image ) {
                 echo '<div class="col-xs-12 col-sm-4">';
                 echo '<div class="multilogo"> ';
                 
-$gallery = get_children( 'posts_per_page=5&post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
+$gallery = get_children( 'post_type=attachment&post_mime_type=image&post_parent=' . $post->ID );
 $attr = array(
     'class' => "attachment-size wp-post-image",
 );

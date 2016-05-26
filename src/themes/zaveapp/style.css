@@ -640,10 +640,7 @@ border: none;
     border-top-right-radius: 20px;
 }
 
-.mainmeta
- {
-    border-right: 1px solid gray;
-}
+
 
 
 #ulmetas {
@@ -1155,13 +1152,6 @@ div.owl-next {
     font-size: 6em;
 }
     
-    .mainmeta {
-    border-right: none;
-}
-    
-    .multilogo {
-    border-left: none;
-}
     
     
     .navbar-collapse .collapse {
