@@ -1,42 +1,41 @@
 {
-    "version": "4.5.1",
+    "version": "4.5.2",
     "locale": "es_ES",
     "theme": "zaveapp",
     "plugins": [
         {
             "name": "wordpress-seo",
             "active": true,
-            "version": "stable"
+            "version": "3.2.5"
         },
         {
             "name": "contact-form-7",
             "active": true,
-            "version": "stable"
+            "version": "4.4.2"
         },
          {
             "name": "mailchimp-for-wp",
             "active": true,
-            "version": "stable"
+            "version": "3.1.8"
         },
         {
             "name": "intercom",
             "active": true,
-            "version": "stable"
-        },
-        {
-            "name": "wp-migrate-db",
-            "active": true,
-            "version": "stable"
+            "version": "2.5.4"
         },
         {
             "name": "bookingcom-official-searchbox",
             "active": true,
-            "version": "stable"
+            "version": "1.7"
         }
     ],
      "custom_plugins" : [
         {
             "name": "ip2location-redirection",
+            "active": true
+        },
+        {
+            "name": "wordpress-errbit",
             "active": true
         }
     ],

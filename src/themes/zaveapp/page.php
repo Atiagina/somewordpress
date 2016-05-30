@@ -210,7 +210,7 @@ $(document).ready(function() {
 </head>
     
 <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" id="body" data-offset="50" >
-
+<?php include_once("analyticstracking.php") ?>
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid full-width" id="pagenavcont">
