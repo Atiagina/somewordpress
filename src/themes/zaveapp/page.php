@@ -260,10 +260,7 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
 <a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>
 </div>
 <div class="socialbutton">
-<a href="" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>
-</div>
-<div class="socialbutton">
-<a href="" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
+<a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
 </div>
     </div>
         

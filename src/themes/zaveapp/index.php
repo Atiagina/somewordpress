@@ -298,7 +298,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <div class="socialbutton">
-                    <a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>
+                    <a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-2">
@@ -958,9 +958,6 @@ foreach( $gallery as $image ) {
                 echo '</div>';
                 echo '<div class="socialbutton">';
                 echo '<a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>';
-                echo '</div>';
-                echo '<div class="socialbutton">';
-                echo '<a href="" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>';
                 echo '</div>';
                 echo '<div class="socialbutton">';
                 echo '<a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>';
