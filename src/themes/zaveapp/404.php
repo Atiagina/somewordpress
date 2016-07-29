@@ -210,7 +210,7 @@ $(document).ready(function() {
 </head>
     
 <body <?php body_class(); ?> data-spy="scroll" data-target=".navbar" id="body" data-offset="50" >
-
+<?php include_once("analyticstracking.php") ?>
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid full-width" id="pagenavcont">
@@ -230,7 +230,7 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
 <div class="container-fluid full-width pagecontent">
     <div class="row myrow">
         
-        <div class="col-sm-12 col-md-6 col-md-offset-1">
+        <div class="col-sm-12">
 <?php 
 		$query = new WP_Query( 'pagename=404-2' );
 		// The Loop
@@ -246,38 +246,45 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
 
 		/* Restore original Post Data */
 		wp_reset_postdata();
-		?>
-    
-     </div>
-        
-    
-        <div class="col-sm-12 col-md-2 col-md-offset-1">
-           <div class="socialbutton">
-<a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
-</div>
-<div class="socialbutton">
-<a href="https://www.facebook.com/zaveapp/" target="_blank"><p><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</p></a>
- </div>
-<div class="socialbutton">
-<a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-medium" aria-hidden="true"></i> Medium</p></a>
- </div>
-<div class="socialbutton">
-<a href="https://twitter.com/zaveapp" target="_blank"><p><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</p></a>
-</div>
-<div class="socialbutton">
-<a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>
-</div>
-<div class="socialbutton">
-<a href="" target="_blank"><p><i class="fa fa-spotify" aria-hidden="true"></i> Spotify</p></a>
-</div>
-<div class="socialbutton">
-<a href="" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
-</div>
-    </div>
-        
-        
+		?>  <!--end the loop -->  
         </div>
     </div>
+</div>
+    
+    <!-- SECTION 2 - SOCIAL BUTTONS -->  
+        
+<div class="container full-width" id="section2" >
+    <div class="row">
+                <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+                    <div class="socialbutton">
+                    <a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.facebook.com/zaveapp/" target="_blank"><p><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://twitter.com/zaveapp" target="_blank"><p><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>
+                    </div>
+                </div>
+    </div>  <!-- end of row -->     
+</div>
+<!-- END OF SECTION 2 - SOCIAL BUTTONS --> 
+    
+    
 <div class="container-fluid full-width" id="sectionstore">
 
     <div class="row row-fluid"> 
@@ -478,9 +485,6 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
                         </div>
                 
             </div>
-        
-
-<!-- begin footer menu -->
 
     </div> <!-- end of section 14 -->
 
@@ -505,3 +509,5 @@ echo esc_url( $url ); ?>"><img src="<?php bloginfo('template_directory'); ?>/img
 
    </body> 
 </html>
+        
+        

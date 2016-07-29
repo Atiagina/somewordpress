@@ -316,7 +316,7 @@
 <!-- END OF SECTION 2 - SOCIAL BUTTONS --> 
 
 <!-- SECTION 3 - COMO FUNCIONA --> 
-<div class="container-fluid full-width" id="section3" >
+<div class="container-fluid full-width" id="como-funciona" >
     <?php 
 		$query = new WP_Query( 'pagename=como-funciona' );
         $comofunciona_id = $query->queried_object->ID;
@@ -360,7 +360,7 @@
 <!-- END OF SECTION 3 - COMO FUNCIONA --> 
     
 <!-- SECTION 4 - ASI DE SIMPLE --> 
-<div class="container-fluid full-width" id="section4" >
+<div class="container-fluid full-width" id="asi-de-simple" >
             <div class="row row-fluid">
                 <div class="col-xs-12">
                     <div class="relativesection">
@@ -398,7 +398,7 @@
 <!-- END OF SECTION 4 - ASI DE SIMPLE --> 
 
 <!-- SECTION 5 - SLIDER --> 
-<div class="container-fluid full-width" id="section5">
+<div class="container-fluid full-width" id="slider">
             <div class="row">
                 <div class="col-xs-12">
                    <!-- Begin Flex Slider -->
@@ -423,7 +423,7 @@
 <!-- END OF SECTION 5 - SLIDER --> 
 
 <!-- SECTION 6 - SEGURIDAD --> 
-<div class="container-fluid full-width" id="section6" >
+<div class="container-fluid full-width" id="seguridad" >
     	<?php 
 		$query = new WP_Query( 'pagename=seguridad' );
 		// The Loop
@@ -457,7 +457,7 @@ foreach( $gallery as $image ) {
 <!-- END OF SECTION 6 - SEGURIDAD --> 
         
 <!-- SECTION 7 - METAS --> 
-<div class="container-fluid full-width" id="section7" >
+<div class="container-fluid full-width" id="metas" >
      <?php 
 		$query = new WP_Query( 'pagename=metas' );
         $metas_id = $query->queried_object->ID;
@@ -712,7 +712,7 @@ foreach( $gallery as $image ) {
 </div> <!-- end of container --> 
 <!-- END OF SECTION 7 - METAS --> 
         
-<div class="container-fluid full-width" id="section8" >
+<div class="container-fluid full-width" id="testimonials" >
     <?php 
 		$query = new WP_Query( 'pagename=testimonials' );
         $testimonials_id = $query->queried_object->ID;
@@ -768,7 +768,7 @@ foreach( $gallery as $image ) {
 <!-- END OF SECTION 8 - TESTIMONIALS --> 
         
 <!-- SECTION 9 - NOSOTROS --> 
-<div class="container-fluid full-width" id="section9" >
+<div class="container-fluid full-width" id="nosotros" >
             <?php 
 		$query = new WP_Query( 'pagename=nosotros' );
 		// The Loop
@@ -800,7 +800,7 @@ foreach( $gallery as $image ) {
 
 <!-- SECTION 10 - ZAVE APP TEAM --> 
         
-<div class="container-fluid full-width" id="section10" >
+<div class="container-fluid full-width" id="equipo" >
              <?php 
 		$query = new WP_Query( 'pagename=zave-app-team' );
         $zaveappteam_id = $query->queried_object->ID;
@@ -860,7 +860,7 @@ foreach( $gallery as $image ) {
 
 <!-- SECTION 11 - PARTNERS --> 
         
-<div class="container-fluid full-width" id="section11" >
+<div class="container-fluid full-width" id="partners" >
             <?php 
 		$query = new WP_Query( 'pagename=partners' );
 		// The Loop
@@ -894,7 +894,7 @@ foreach( $gallery as $image ) {
 <!-- END OF SECTION 11 - PARTNERS --> 
         
 <!-- SECTION 12 - PRENSA --> 
-<div class="container-fluid full-width" id="section12" >
+<div class="container-fluid full-width" id="prensa" >
     <?php 
 		$query = new WP_Query( 'pagename=prensa' );
 		// The Loop
@@ -931,7 +931,7 @@ foreach( $gallery as $image ) {
 
 <!-- SECTION 13 - CONTACTO --> 
         
-<div class="container-fluid full-width" id="section13" >
+<div class="container-fluid full-width" id="contacto" >
             <?php 
 		$query = new WP_Query( 'pagename=contacto' );
 		// The Loop

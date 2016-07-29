@@ -230,7 +230,7 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
 <div class="container-fluid full-width pagecontent">
     <div class="row myrow">
         
-        <div class="col-sm-12 col-md-6 col-md-offset-1">
+        <div class="col-sm-12">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?><!-- start the loop-->
 <h2><?php the_title(); ?></h2>
 <div class="row myrow">
@@ -241,32 +241,43 @@ echo esc_url( $url ); ?>"><i class="fa fa-arrow-circle-left" aria-hidden="true">
     </div>
 <?php endwhile; endif; ?>   <!--end the loop -->  
         </div>
-        
+    </div>
+</div>
     
-        <div class="col-sm-12 col-md-2 col-md-offset-1">
-           <div class="socialbutton">
-<a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
-</div>
-<div class="socialbutton">
-<a href="https://www.facebook.com/zaveapp/" target="_blank"><p><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</p></a>
- </div>
-<div class="socialbutton">
-<a href="https://medium.com/@Zaveapp1" target="_blank"><p><i class="fa fa-medium" aria-hidden="true"></i> Medium</p></a>
- </div>
-<div class="socialbutton">
-<a href="https://twitter.com/zaveapp" target="_blank"><p><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</p></a>
-</div>
-<div class="socialbutton">
-<a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>
-</div>
-<div class="socialbutton">
-<a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
-</div>
-    </div>
+    <!-- SECTION 2 - SOCIAL BUTTONS -->  
         
-        
-        </div>
-    </div>
+<div class="container full-width" id="section2" >
+    <div class="row">
+                <div class="col-xs-12 col-sm-2 col-sm-offset-1">
+                    <div class="socialbutton">
+                    <a href="https://www.instagram.com/zaveapp/" target="_blank"><p><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.facebook.com/zaveapp/" target="_blank"><p><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.linkedin.com/company/zave-app" target="_blank"><p><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://twitter.com/zaveapp" target="_blank"><p><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</p></a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+                    <div class="socialbutton">
+                    <a href="https://www.pinterest.com/zaveapp/" target="_blank"><p><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</p></a>
+                    </div>
+                </div>
+    </div>  <!-- end of row -->     
+</div>
+<!-- END OF SECTION 2 - SOCIAL BUTTONS --> 
+    
+    
 <div class="container-fluid full-width" id="sectionstore">
 
     <div class="row row-fluid"> 

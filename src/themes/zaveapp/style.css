@@ -127,8 +127,8 @@ a img {
 }
 
 #section1,
-#section4,
-#section5,
+#asi-de-simple,
+#slider,
 #newsletter {
     padding:0; !important
 }
@@ -543,7 +543,7 @@ nav.navbar-default .navbar-nav > .active > a:focus
     padding: 30px;
 }
 
-#section3 > div.row.myrow > div > i {
+#como-funciona > div.row.myrow > div > i {
     font-size: 5em;
 }
 
@@ -584,7 +584,7 @@ nav.navbar-default .navbar-nav > .active > a:focus
 
 /*SECTION 6 - SEGURIDAD */
 
- #section6 {
+ #seguridad {
      background-color: black;
      color: white;
      padding-bottom: 30px;
@@ -678,9 +678,14 @@ border: none;
     font-size: 6em;
 }
 
+#bos_searchbox_widget_class-3 h3,
+#bos_searchbox_widget_class-3 h4 {
+    text-transform:none; 
+}
+
 /*SECTION 8 - TESTIMONIALS */
 
-#section8 h4 {
+#testimonials h4 {
     font-family: OswaldDemiBold; !important
     text-transform: uppercase;
     line-height: 1.8em;
@@ -689,12 +694,12 @@ border: none;
 
 /*SECTION 10 - ZAVEAPP TEAM */
 
-#section10 {
+#equipo {
     background-color: black;
     color: white;
 }
 
-#section10 h4 {
+#equipo h4 {
     font-family: OswaldDemiBold; !important
     text-transform: uppercase;
     line-height: 1.8em;
@@ -728,7 +733,7 @@ div.owl-next {
 
 /*SECTION 12 - PRENSA */
 
-#section12 {
+#prensa {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     
@@ -794,7 +799,7 @@ div.owl-next {
     padding-left: 10px;
 }
 
-#section13 .socialbutton {
+#contacto .socialbutton {
     width: 80%;
     margin: 10px auto;
     font-size: 1.4em;
@@ -922,15 +927,10 @@ div.owl-next {
     font-family: OswaldDemiBold;
 }
 
-.pagecontent>div>div>.socialbutton {
-    background-color: #777;
-}
-
-
 .pagecontent img {
     margin: 15px auto;
-    max-width: 500px;
     width: 100%;
+    height: 100%;
     padding: 0 auto;
 }
 
