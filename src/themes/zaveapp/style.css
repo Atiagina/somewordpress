@@ -73,20 +73,20 @@ table {
 
 /*end of v2.0 resets, start of my resets */
 
-body {
-    margin: 0;
+body.blog {
 	box-sizing: border-box;	/* declared width = rendered width */
     overflow-x: hidden; 
     -webkit-overflow-x: hidden;
     width: 100%;
     min-height: 100%;
+    max-width: 1920px;
+    margin: 0 auto;!important
 }
 
 html {
-   margin: 0px;
    height: 100%;
    width: 100%;
-    font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
+font-size: 16px; /* 1 rem = 16px */  /* set in pixels so we can use rems */
     overflow-x: hidden;
 }
 
@@ -253,6 +253,14 @@ h4 {
     background-color: white;
     opacity: 0.9;
     font-family: OswaldDemiBold;
+    width: 100%;
+}
+
+.navbar.navbar-fixed-top {
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 #navcont {
